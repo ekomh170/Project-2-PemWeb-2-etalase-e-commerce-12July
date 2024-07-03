@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('kategori_tokoh', function (Blueprint $table) {
             $table->id();
+            $table->string('nama', 45); // Menambahkan kolom nama
             $table->timestamps();
         });
     }
