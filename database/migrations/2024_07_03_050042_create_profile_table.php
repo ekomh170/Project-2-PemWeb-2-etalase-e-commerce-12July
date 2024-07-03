@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('address')->nullable();
-            $table->string('phone_number')->nullable();
-            $table->date('birth_date')->nullable();
-            $table->string('photo')->nullable();
-            $table->enum('gender', ['male', 'female', 'other'])->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('nomer_hp')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('foto')->nullable();
+            $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan'])->nullable();
             $table->text('bio')->nullable();
             $table->string('website')->nullable();
-            $table->text('hobbies')->nullable();
+            $table->text('hobi')->nullable();
             $table->string('linkedin')->nullable();
             $table->timestamps();
         });

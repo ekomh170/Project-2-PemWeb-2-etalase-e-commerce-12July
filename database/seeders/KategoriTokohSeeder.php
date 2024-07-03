@@ -13,9 +13,9 @@ class KategoriTokohSeeder extends Seeder
     public function run(): void
     {
         DB::table('kategori_tokoh')->insert([
-            ['nama' => 'Artis', 'created_at' => now(), 'updated_at' => now()],
-            ['nama' => 'Atlet', 'created_at' => now(), 'updated_at' => now()],
-            ['nama' => 'Politisi', 'created_at' => now(), 'updated_at' => now()],
+            ['nama' => 'Artis'],
+            ['nama' => 'Atlet'],
+            ['nama' => 'Politisi'],
         ]);
     }
 }

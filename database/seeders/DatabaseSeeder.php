@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +16,8 @@ class DatabaseSeeder extends Seeder
             KategoriTokohSeeder::class,
             ProdukSeeder::class,
             TestimoniSeeder::class,
+            UsersTableSeeder::class,
+            ProfilesTableSeeder::class,
         ]);
     }
 }

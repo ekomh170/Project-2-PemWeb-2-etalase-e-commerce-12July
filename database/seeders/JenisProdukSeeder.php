@@ -13,9 +13,9 @@ class JenisProdukSeeder extends Seeder
     public function run(): void
     {
         DB::table('jenis_produk')->insert([
-            ['nama' => 'Elektronik', 'created_at' => now(), 'updated_at' => now()],
-            ['nama' => 'Pakaian', 'created_at' => now(), 'updated_at' => now()],
-            ['nama' => 'Makanan', 'created_at' => now(), 'updated_at' => now()],
+            ['nama' => 'Elektronik'],
+            ['nama' => 'Pakaian'],
+            ['nama' => 'Makanan'],
         ]);
     }
 }

@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('testimoni', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal'); // Menambahkan kolom tanggal
-            $table->string('nama_tokoh', 45); // Menambahkan kolom nama_tokoh dengan panjang maksimum 45 karakter
-            $table->integer('rating'); // Menambahkan kolom rating
+            $table->date('tanggal')->nullable(); // Menambahkan kolom tanggal
+            $table->string('nama_tokoh', 45)->nullable(); // Menambahkan kolom nama_tokoh
+            $table->string('komentar', 200)->nullable(); // Menambahkan kolom komentar
+            $table->integer('rating')->nullable(); // Menambahkan kolom rating
             $table->foreignId('produk_id')->constrained('produk'); // Menambahkan foreign key ke tabel produk
             $table->foreignId('kategori_tokoh_id')->constrained('kategori_tokoh'); // Menambahkan foreign key ke tabel kategori_tokoh
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('jenis_produk', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 45); // Menambahkan kolom nama
-            $table->timestamps();
+            $table->string('nama', 45)->nullable(); // Menambahkan kolom nama
+            // $table->timestamps();
         });
     }
 

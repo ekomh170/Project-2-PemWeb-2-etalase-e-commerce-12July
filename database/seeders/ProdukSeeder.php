@@ -21,9 +21,7 @@ class ProdukSeeder extends Seeder
                 'rating' => 4,
                 'min_stok' => 10,
                 'deskripsi' => 'Smartphone dengan fitur canggih dan baterai tahan lama',
-                'jenis_produk_id' => 1,
-                'created_at' => now(),
-                'updated_at' => now()
+                'jenis_produk_id' => 1
             ],
             [
                 'kode' => 'PAK001',
@@ -33,9 +31,7 @@ class ProdukSeeder extends Seeder
                 'rating' => 5,
                 'min_stok' => 20,
                 'deskripsi' => 'Kaos polos dengan bahan katun yang nyaman',
-                'jenis_produk_id' => 2,
-                'created_at' => now(),
-                'updated_at' => now()
+                'jenis_produk_id' => 2
             ],
             [
                 'kode' => 'MAK001',
@@ -45,9 +41,7 @@ class ProdukSeeder extends Seeder
                 'rating' => 3,
                 'min_stok' => 30,
                 'deskripsi' => 'Keripik singkong renyah dengan berbagai rasa',
-                'jenis_produk_id' => 3,
-                'created_at' => now(),
-                'updated_at' => now()
+                'jenis_produk_id' => 3
             ]
         ]);
     }
