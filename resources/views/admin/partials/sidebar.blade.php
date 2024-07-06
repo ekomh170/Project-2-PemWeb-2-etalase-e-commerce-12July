@@ -1,11 +1,11 @@
       <!-- Sidebar -->
-      <div class="sidebar" data-background-color="dark">
+      <div class="sidebar sidebar-style-2" data-background-color="dark">
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
             <a href="index.html" class="logo">
               <img
-                src="{{ asset('assets/admin/img/kaiadmin/logo_light.svg') }}"
+                src="{{ asset('assets/admin')}}/img/kaiadmin/logo_light.svg"
                 alt="navbar brand"
                 class="navbar-brand"
                 height="20"
@@ -19,16 +19,13 @@
                 <i class="gg-menu-left"></i>
               </button>
             </div>
-            <button class="topbar-toggler more">
-              <i class="gg-more-vertical-alt"></i>
-            </button>
           </div>
           <!-- End Logo Header -->
         </div>
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
           <div class="sidebar-content">
             <ul class="nav nav-secondary">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a
                   data-bs-toggle="collapse"
                   href="#dashboard"
@@ -111,15 +108,15 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active submenu">
                 <a data-bs-toggle="collapse" href="#sidebarLayouts">
                   <i class="fas fa-th-list"></i>
                   <p>Sidebar Layouts</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="sidebarLayouts">
+                <div class="collapse show" id="sidebarLayouts">
                   <ul class="nav nav-collapse">
-                    <li>
+                    <li class="active">
                       <a href="sidebar-style-2.html">
                         <span class="sub-item">Sidebar Style 2</span>
                       </a>
