@@ -7,19 +7,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Testing Development
 Route::get('/landing', function () {
     return view('landing.pages.index');
 });
 
-// Testing Development
+
 Route::get('/admin', function () {
     return view('admin.pages.index');
 });
 
+Route::get('/auth_test', function () {
+    return view('auth_temp.index');
+});
+
+// Testing Development
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-// Testing Development
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
