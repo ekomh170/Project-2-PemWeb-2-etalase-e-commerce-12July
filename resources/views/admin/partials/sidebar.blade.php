@@ -185,7 +185,7 @@
                           <span class="sidebar-mini-icon">
                               <i class="fa fa-ellipsis-h"></i>
                           </span>
-                          <h4 class="text-section">Master Pengelompokan</h4>
+                          <h4 class="text-section">Konfigurasi</h4>
                       </li>
                       {{-- Konfigurasi --}}
 
