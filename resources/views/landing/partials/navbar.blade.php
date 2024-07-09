@@ -6,7 +6,8 @@
         </div>
         <div class="col-lg-6 px-5 text-end">
             <small>Follow Us :</small>
-            <a class="text-body ms-3" href="https://www.linkedin.com/in/eko-haryono-290/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a class="text-body ms-3" href="https://www.linkedin.com/in/eko-haryono-290/" target="_blank"><i
+                    class="fab fa-linkedin-in"></i></a>
         </div>
     </div>
 
@@ -19,11 +20,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ url('/') }}" class="nav-item nav-link">Hal. Utama</a>
-                <a href="{{ url('/about') }}" class="nav-item nav-link">Tentang Kami</a>
-                <a href="{{ url('/product') }}" class="nav-item nav-link">Produk & Testi</a>
-                <a href="{{ url('/blog') }}" class="nav-item nav-link">Blog Kami</a>
-                <a href="{{ url('/contact') }}" class="nav-item nav-link">Kontak Kami</a>
+                <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Hal.
+                    Utama</a>
+                <a href="{{ url('/about') }}"
+                    class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">Tentang</a>
+                <a href="{{ url('/product') }}"
+                    class="nav-item nav-link {{ request()->is('product') ? 'active' : '' }}">Produk & Testi</a>
+                <a href="{{ url('/blog') }}" class="nav-item nav-link {{ request()->is('blog') ? 'active' : '' }}">Blog
+                </a>
+                <a href="{{ url('/contact') }}"
+                    class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}">Kontak</a>
+
                 @if (Route::has('login'))
                     @auth
                         <a href="{{ url('/dashboard') }}" class="nav-item nav-link">Dashboard</a>
@@ -47,4 +54,3 @@
     </nav>
 </div>
 <!-- Navbar End -->
-

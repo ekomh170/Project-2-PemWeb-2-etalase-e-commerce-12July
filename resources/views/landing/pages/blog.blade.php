@@ -1,6 +1,6 @@
 @extends('landing.layouts.master')
 
-@section('title', 'Halaman Utama - Blog Kami - Testi Mart')
+@section('title', 'Blog - Testi Mart')
 
 @section('content')
 
