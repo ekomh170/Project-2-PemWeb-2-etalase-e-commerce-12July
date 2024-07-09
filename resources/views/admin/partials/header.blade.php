@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <link rel="icon" href="{{ asset('assets/admin') }}/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    
 
     <!-- Fonts and icons -->
     <script src="{{ asset('assets/admin') }}/js/plugin/webfont/webfont.min.js"></script>
@@ -34,8 +35,9 @@
     <link rel="stylesheet" href="{{ asset('assets/admin') }}/css/plugins.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/admin') }}/css/kaiadmin.min.css" />
 
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="{{ asset('assets/admin') }}/css/demo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+
+    
 </head>
 
 <body>

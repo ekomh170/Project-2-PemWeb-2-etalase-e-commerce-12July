@@ -7,6 +7,31 @@
         <div class="page-inner">
             <div class="page-header">
                 <h3 class="fw-bold mb-3">Detail Produk</h3>
+                <ul class="breadcrumbs mb-3">
+                    <li class="nav-home">
+                        <a href="#">
+                            <i class="icon-home"></i>
+                        </a>
+                    </li>
+                    <li class="separator">
+                        <i class="icon-arrow-right"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Master Data</a>
+                    </li>
+                    <li class="separator">
+                        <i class="icon-arrow-right"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Produk</a>
+                    </li>
+                    <li class="separator">
+                        <i class="icon-arrow-right"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Detail Produk</a>
+                    </li>
+                </ul>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -27,7 +52,8 @@
                                 </tr>
                                 <tr>
                                     <th>Gambar Produk</th>
-                                    <td><img src="{{ $produk->gambar_produk }}" alt="{{ $produk->nama }}" style="width: 100px;"></td>
+                                    <td><img src="{{ $produk->gambar_produk }}" alt="{{ $produk->nama }}"
+                                            style="width: 100px;"></td>
                                 </tr>
                                 <tr>
                                     <th>Stok</th>

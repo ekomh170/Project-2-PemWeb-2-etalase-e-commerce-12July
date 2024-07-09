@@ -26,7 +26,27 @@
   <script src="{{ asset('assets/admin') }}/js/plugin/jsvectormap/world.js"></script>
 
   <!-- Sweet Alert -->
-  <script src="{{ asset('assets/admin') }}/js/plugin/sweetalert/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+
+
+
+  <script>
+      @if (session('success'))
+          Swal.fire({
+              icon: 'success',
+              title: 'Success',
+              text: '{{ session('success') }}',
+          });
+      @endif
+
+      @if (session('error'))
+          Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: '{{ session('error') }}',
+          });
+      @endif
+  </script>
 
   <!-- Kaiadmin JS -->
   <script src="{{ asset('assets/admin') }}/js/kaiadmin.min.js"></script>
@@ -60,8 +80,8 @@
       });
   </script>
 
-    @yield('datatable-js')
-    
+  @yield('datatable-js')
+
   </body>
 
   </html>
