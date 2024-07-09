@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('kode', 10)->nullable(); // Menambahkan kolom kode
             $table->string('nama', 45); // Menambahkan kolom nama 
             $table->double('harga'); // Menambahkan kolom harga
+            $table->string('gambar_produk')->nullable(); // Menambahkan kolom gambar_produk
             $table->integer('stok')->nullable(); // Menambahkan kolom stok
             $table->integer('rating')->nullable(); // Menambahkan kolom rating
             $table->integer('min_stok')->nullable(); // Menambahkan kolom min_stok
