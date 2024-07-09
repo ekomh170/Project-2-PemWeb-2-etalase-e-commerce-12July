@@ -130,6 +130,6 @@ Route::get('/landing', function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin.pages.index');
+    return view('admin.pages.dashboard');
 });
 // Testing Development ==============================================
