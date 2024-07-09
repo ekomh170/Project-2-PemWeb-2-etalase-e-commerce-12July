@@ -69,6 +69,7 @@ Route::middleware('auth')->group(function () {
 // Master Data Utama
 // Produk
 Route::get('/panel/produk', [ProdukController::class, 'index'])->name('produk.index');
+Route::get('/panel/produk/data', [ProdukController::class, 'getData'])->name('produk.data');
 Route::get('/panel/produk/create', [ProdukController::class, 'create'])->name('produk.create');
 Route::post('/panel/produk/store', [ProdukController::class, 'store'])->name('produk.store');
 Route::get('/panel/produk/{produk}', [ProdukController::class, 'show'])->name('produk.show');

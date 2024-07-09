@@ -31,9 +31,6 @@
   <!-- Kaiadmin JS -->
   <script src="{{ asset('assets/admin') }}/js/kaiadmin.min.js"></script>
 
-  <!-- Kaiadmin DEMO methods, don't include it in your project! -->
-  <script src="{{ asset('assets/admin') }}/js/setting-demo.js"></script>
-  <script src="{{ asset('assets/admin') }}/js/demo.js"></script>
   <script>
       $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
           type: "line",
@@ -62,6 +59,9 @@
           fillColor: "rgba(255, 165, 52, .14)",
       });
   </script>
+
+    @yield('datatable-js')
+    
   </body>
 
   </html>

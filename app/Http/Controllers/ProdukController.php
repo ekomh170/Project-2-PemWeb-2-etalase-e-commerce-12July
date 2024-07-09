@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\JenisProduk;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class ProdukController extends Controller
 {
@@ -12,7 +14,19 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pages.produk.index');
+    }
+
+    public function getData()
+    {
+        $produk = Produk::with('jenisProduk')->select('produk.*')->get();
+        
+        return DataTables::of($produk)
+            ->addIndexColumn() // Menambahkan kolom DT_RowIndex
+            ->addColumn('action', function($item) {
+                return view('admin.pages.produk.actions', compact('item'))->render();
+            })
+            ->make(true);
     }
 
     /**
@@ -20,7 +34,8 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        //
+        $jenisProduk = JenisProduk::all();
+        return view('admin.pages.produk.create', compact('jenisProduk'));
     }
 
     /**
@@ -28,7 +43,21 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode' => 'nullable|string|max:10',
+            'nama' => 'required|string|max:45',
+            'harga' => 'required|numeric',
+            'gambar_produk' => 'nullable|string',
+            'stok' => 'nullable|integer',
+            'rating' => 'nullable|integer',
+            'min_stok' => 'nullable|integer',
+            'deskripsi' => 'nullable|string',
+            'jenis_produk_id' => 'required|exists:jenis_produk,id',
+        ]);
+
+        Produk::create($request->all());
+        
+        return redirect()->route('produk.index')->with('success', 'Produk berhasil ditambahkan');
     }
 
     /**
@@ -36,7 +65,7 @@ class ProdukController extends Controller
      */
     public function show(Produk $produk)
     {
-        //
+        return view('admin.pages.produk.show', compact('produk'));
     }
 
     /**
@@ -44,7 +73,8 @@ class ProdukController extends Controller
      */
     public function edit(Produk $produk)
     {
-        //
+        $jenisProduk = JenisProduk::all();
+        return view('admin.pages.produk.edit', compact('produk', 'jenisProduk'));
     }
 
     /**
@@ -52,7 +82,21 @@ class ProdukController extends Controller
      */
     public function update(Request $request, Produk $produk)
     {
-        //
+        $request->validate([
+            'kode' => 'nullable|string|max:10',
+            'nama' => 'required|string|max:45',
+            'harga' => 'required|numeric',
+            'gambar_produk' => 'nullable|string',
+            'stok' => 'nullable|integer',
+            'rating' => 'nullable|integer',
+            'min_stok' => 'nullable|integer',
+            'deskripsi' => 'nullable|string',
+            'jenis_produk_id' => 'required|exists:jenis_produk,id',
+        ]);
+
+        $produk->update($request->all());
+        
+        return redirect()->route('produk.index')->with('success', 'Produk berhasil diperbarui');
     }
 
     /**
@@ -60,6 +104,7 @@ class ProdukController extends Controller
      */
     public function destroy(Produk $produk)
     {
-        //
+        $produk->delete();
+        return redirect()->route('produk.index')->with('success', 'Produk berhasil dihapus');
     }
 }
