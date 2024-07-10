@@ -32,7 +32,7 @@
                                 <div class="col col-stats ms-3 ms-sm-0">
                                     <div class="numbers">
                                         <p class="card-category">Produk</p>
-                                        <h4 class="card-title">1,294</h4>
+                                        <h4 class="card-title">{{ $total_product }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                                 <div class="col col-stats ms-3 ms-sm-0">
                                     <div class="numbers">
                                         <p class="card-category">Testimoni</p>
-                                        <h4 class="card-title">1303</h4>
+                                        <h4 class="card-title">{{ $total_testimoni }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                 <div class="col col-stats ms-3 ms-sm-0">
                                     <div class="numbers">
                                         <p class="card-category">Jenis Produk</p>
-                                        <h4 class="card-title">$ 1,345</h4>
+                                        <h4 class="card-title">{{ $total_jenis_produk }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                                 <div class="col col-stats ms-3 ms-sm-0">
                                     <div class="numbers">
                                         <p class="card-category">Kategori Tokoh</p>
-                                        <h4 class="card-title">576</h4>
+                                        <h4 class="card-title">{{ $total_kategori_tokoh }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body pb-0">
-                            <h2 class="mb-2">17</h2>
+                            <h2 class="mb-2">{{ $total_user }}</h2>
                             <p class="text-muted">Total Member</p>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body pb-0">
-                            <h2 class="mb-2">27</h2>
+                            <h2 class="mb-2">{{ $new_user }}</h2>
                             <p class="text-muted">Member Baru</p>
                         </div>
                     </div>
@@ -122,66 +122,17 @@
                         <div class="card-body">
                             <div class="card-title fw-mediumbold">Testimoni Produk</div>
                             <div class="card-list">
-                                <div class="item-list">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets/admin') }}/img/jm_denis.jpg" alt="..."
-                                            class="avatar-img rounded-circle">
+                                @foreach ($testimoni as $item)
+                                    <div class="item-list">
+                                        <div class="avatar">
+                                            <span class="avatar-title rounded-circle border border-white bg-info">{{ substr($item->nama_tokoh, 0, 1) }}</span>
+                                        </div>
+                                        <div class="info-user ms-3">
+                                            <div class="username">{{ $item->nama_tokoh }}</div>
+                                            <div class="status">{{ $item->kategoriTokoh->nama }}</div>
+                                        </div>
                                     </div>
-                                    <div class="info-user ms-3">
-                                        <div class="username">Jimmy Denis</div>
-                                        <div class="status">Graphic Designer</div>
-                                    </div>
-                                </div>
-                                <div class="item-list">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets/admin') }}/img/chadengle.jpg" alt="..."
-                                            class="avatar-img rounded-circle">
-                                    </div>
-                                    <div class="info-user ms-3">
-                                        <div class="username">Chad</div>
-                                        <div class="status">CEO Zeleaf</div>
-                                    </div>
-                                </div>
-                                <div class="item-list">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets/admin') }}/img/talha.jpg" alt="..."
-                                            class="avatar-img rounded-circle">
-                                    </div>
-                                    <div class="info-user ms-3">
-                                        <div class="username">Talha</div>
-                                        <div class="status">Front End Designer</div>
-                                    </div>
-                                </div>
-                                <div class="item-list">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets/admin') }}/img/mlane.jpg" alt="..."
-                                            class="avatar-img rounded-circle">
-                                    </div>
-                                    <div class="info-user ms-3">
-                                        <div class="username">John Doe</div>
-                                        <div class="status">Back End Developer</div>
-                                    </div>
-                                </div>
-                                <div class="item-list">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets/admin') }}/img/talha.jpg" alt="..."
-                                            class="avatar-img rounded-circle">
-                                    </div>
-                                    <div class="info-user ms-3">
-                                        <div class="username">Talha</div>
-                                        <div class="status">Front End Designer</div>
-                                    </div>
-                                </div>
-                                <div class="item-list">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets/admin') }}/img/jm_denis.jpg" alt="..."
-                                            class="avatar-img rounded-circle">
-                                    </div>
-                                    <div class="info-user ms-3">
-                                        <div class="username">Jimmy Denis</div>
-                                        <div class="status">Graphic Designer</div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -194,87 +145,20 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="d-flex">
-                                <div class="avatar avatar-online">
-                                    <span class="avatar-title rounded-circle border border-white bg-info">J</span>
+                            @foreach ($testimoni as $item)
+                                <div class="d-flex">
+                                    <div class="avatar avatar">
+                                        <span class="avatar-title rounded-circle border border-white bg-info">{{ substr($item->nama_tokoh, 0, 1) }}</span>
+                                    </div>
+                                    <div class="flex-1 ms-3 pt-1">
+                                        <h6 class="text-uppercase fw-bold mb-1">
+                                            {{ $item->nama_tokoh }}
+                                        </h6>
+                                        <span class="text-muted">{{ $item->komentar }}</span>
+                                    </div>
                                 </div>
-                                <div class="flex-1 ms-3 pt-1">
-                                    <h6 class="text-uppercase fw-bold mb-1">
-                                        Joko Subianto
-                                        <span class="text-warning ps-3">pending</span>
-                                    </h6>
-                                    <span class="text-muted">I am facing some trouble with my viewport. When i
-                                        start my</span>
-                                </div>
-                                <div class="float-end pt-1">
-                                    <small class="text-muted">8:40 PM</small>
-                                </div>
-                            </div>
-                            <div class="separator-dashed"></div>
-                            <div class="d-flex">
-                                <div class="avatar avatar-offline">
-                                    <span class="avatar-title rounded-circle border border-white bg-secondary">P</span>
-                                </div>
-                                <div class="flex-1 ms-3 pt-1">
-                                    <h6 class="text-uppercase fw-bold mb-1">
-                                        Prabowo Widodo
-                                        <span class="text-success ps-3">open</span>
-                                    </h6>
-                                    <span class="text-muted">I have some query regarding the license issue.</span>
-                                </div>
-                                <div class="float-end pt-1">
-                                    <small class="text-muted">1 Day Ago</small>
-                                </div>
-                            </div>
-                            <div class="separator-dashed"></div>
-                            <div class="d-flex">
-                                <div class="avatar avatar-away">
-                                    <span class="avatar-title rounded-circle border border-white bg-danger">L</span>
-                                </div>
-                                <div class="flex-1 ms-3 pt-1">
-                                    <h6 class="text-uppercase fw-bold mb-1">
-                                        Lee Chong Wei
-                                        <span class="text-muted ps-3">closed</span>
-                                    </h6>
-                                    <span class="text-muted">Is there any update plan for RTL version near
-                                        future?</span>
-                                </div>
-                                <div class="float-end pt-1">
-                                    <small class="text-muted">2 Days Ago</small>
-                                </div>
-                            </div>
-                            <div class="separator-dashed"></div>
-                            <div class="d-flex">
-                                <div class="avatar avatar-offline">
-                                    <span class="avatar-title rounded-circle border border-white bg-secondary">P</span>
-                                </div>
-                                <div class="flex-1 ms-3 pt-1">
-                                    <h6 class="text-uppercase fw-bold mb-1">
-                                        Peter Parker
-                                        <span class="text-success ps-3">open</span>
-                                    </h6>
-                                    <span class="text-muted">I have some query regarding the license issue.</span>
-                                </div>
-                                <div class="float-end pt-1">
-                                    <small class="text-muted">2 Day Ago</small>
-                                </div>
-                            </div>
-                            <div class="separator-dashed"></div>
-                            <div class="d-flex">
-                                <div class="avatar avatar-away">
-                                    <span class="avatar-title rounded-circle border border-white bg-danger">L</span>
-                                </div>
-                                <div class="flex-1 ms-3 pt-1">
-                                    <h6 class="text-uppercase fw-bold mb-1">
-                                        Logan Paul <span class="text-muted ps-3">closed</span>
-                                    </h6>
-                                    <span class="text-muted">Is there any update plan for RTL version near
-                                        future?</span>
-                                </div>
-                                <div class="float-end pt-1">
-                                    <small class="text-muted">2 Days Ago</small>
-                                </div>
-                            </div>
+                                <div class="separator-dashed"></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
