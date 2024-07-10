@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TestimoniController;
@@ -9,39 +9,27 @@ use App\Http\Controllers\KategoriTokohController;
 use App\Http\Middleware\RoleMiddleware;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileAdminController;
-
-
-
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 
 // Landing Page ==============================================
-// Halaman Utama
-Route::get('/', function () {
-    return view('landing.pages.index');
-});
+// Halaman Utama-> Controllers
+Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 
 // Tentang Kami
-Route::get('/about', function () {
-    return view('landing.pages.about');
-});
+Route::get('/about', [LandingController::class, 'about'])->name('landing.about');
 // Tentang Kami
 
 // Produk Kami
-Route::get('/product', function () {
-    return view('landing.pages.product');
-});
+Route::get('/product', [LandingController::class, 'product'])->name('landing.product');
 // Produk Kami
 
 // Blog
-Route::get('/blog', function () {
-    return view('landing.pages.blog');
-});
+Route::get('/blog', [LandingController::class, 'blog'])->name('landing.blog');
 // Blog
 
 // Kontak Kami
-Route::get('/contact', function () {
-    return view('landing.pages.contact');
-});
+Route::get('/contact', [LandingController::class, 'contact'])->name('landing.contact');
 // Kontak Kami
 // Landing Page ==============================================
 
@@ -52,10 +40,9 @@ require __DIR__ . '/auth.php';
 // Set Auth ==============================================
 
 
-
 // Administrator
 // Dashboard
-Route::get('/dashboard_member', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Dashboard
@@ -71,12 +58,9 @@ Route::middleware('auth')->group(function () {
 
 // Master Data Utama
 // Produk
-Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function () {
-
+Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group(function () {
     // Dashboard Admin
-    Route::get('/dashboardAdmin', function () {
-        return view('admin.pages.dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboardAdmin');
+    Route::get('/panel/dashboardAdmin', [DashboardAdminController::class, 'index'])->name('dashboardAdmin');
     // Dashboard Admin
 
     // Profile Admin
@@ -108,8 +92,6 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     // Testimoni
     // Master Data Utama
 
-
-
     // Master Pengelompokan
     // Jenis Produk
     Route::get('/panel/jenisProduk', [JenisProdukController::class, 'index'])->name('jenisProduk.index');
@@ -133,7 +115,6 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     Route::delete('/panel/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'destroy'])->name('kategoriTokoh.destroy');
     // Kategori Tokoh
     // Master Pengelompokan
-
 
     // Konfigurasi
     // Account Users

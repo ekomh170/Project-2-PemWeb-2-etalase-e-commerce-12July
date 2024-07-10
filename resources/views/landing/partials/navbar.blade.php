@@ -33,7 +33,13 @@
 
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="nav-item nav-link">Dashboard</a>
+                        @if (Auth::user()->role == 'admin')
+                            <a href="{{ url('/panel/dashboardAdmin') }}" class="nav-item nav-link">Dashboard Admin</a>
+                        @elseif (Auth::user()->role == 'member')
+                            <a href="{{ url('/dashboard') }}" class="nav-item nav-link">Dashboard Member</a>
+                        @else
+                            <a href="{{ url('/dashboard') }}" class="nav-item nav-link">Dashboard</a>
+                        @endif
                     @else
                         <a href="{{ route('login') }}" class="nav-item nav-link">Log in</a>
                         @if (Route::has('register'))
@@ -41,6 +47,7 @@
                         @endif
                     @endauth
                 @endif
+
             </div>
             <div class="d-none d-lg-flex ms-2">
                 <a class="btn-sm-square bg-white rounded-circle ms-3" href="">

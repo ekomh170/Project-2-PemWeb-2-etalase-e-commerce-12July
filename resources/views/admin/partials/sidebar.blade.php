@@ -38,6 +38,15 @@
             </div>
 
             <ul class="nav nav-secondary">
+                <!-- Halaman Utama -->
+                <li class="nav-item {{ Route::is('landing.index') ? 'active' : '' }}">
+                    <a href="{{ route('landing.index') }}">
+                        <i class="fas fa-home"></i>
+                        <p>Halaman Utama Web</p>
+                    </a>
+                </li>
+                <!-- End Halaman Utama -->
+
                 <!-- Dashboard -->
                 <li class="nav-item {{ Route::is('dashboardAdmin') ? 'active' : '' }}">
                     <a href="{{ route('dashboardAdmin') }}">
@@ -250,17 +259,36 @@
 
                 <!-- Logout -->
                 <li class="nav-item">
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); 
-                this.closest('form').submit();">
+                        <a href="#" onclick="event.preventDefault(); konfirmasiLogout();">
                             <i class="fas fa-home"></i>
                             <p>Logout</p>
                         </a>
                     </form>
                 </li>
+
+                <!-- Sweet Alert JS -->
+                <script>
+                    function konfirmasiLogout() {
+                        Swal.fire({
+                            title: 'Anda yakin?',
+                            text: "Anda akan keluar!",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Ya, keluar!'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                document.getElementById('logout-form').submit();
+                            }
+                        });
+                    }
+                </script>
+                <!-- Sweet Alert JS -->
                 <!-- End Logout -->
+
             </ul>
         </div>
     </div>
