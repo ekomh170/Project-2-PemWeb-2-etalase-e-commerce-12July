@@ -97,6 +97,7 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     // Master Pengelompokan
     // Jenis Produk
     Route::get('/panel/jenisProduk', [JenisProdukController::class, 'index'])->name('jenisProduk.index');
+    Route::get('/panel/jenisProduk/data', [JenisProdukController::class, 'getData'])->name('jenisProduk.data');
     Route::get('/panel/jenisProduk/create', [JenisProdukController::class, 'create'])->name('jenisProduk.create');
     Route::post('/panel/jenisProduk/store', [JenisProdukController::class, 'store'])->name('jenisProduk.store');
     Route::get('/panel/jenisProduk/{jenisProduk}', [JenisProdukController::class, 'show'])->name('jenisProduk.show');
