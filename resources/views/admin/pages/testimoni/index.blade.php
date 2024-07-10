@@ -80,7 +80,6 @@
         ajax: '{{ route('testimoni.data') }}',
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
-
             { data: 'tanggal', name: 'tanggal' },
             { data: 'nama_tokoh', name: 'nama_tokoh' },
             { data: 'rating', name: 'rating' },

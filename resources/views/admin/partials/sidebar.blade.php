@@ -1,9 +1,10 @@
 <!-- Sidebar -->
-<div class="sidebar sidebar-style-2" data-background-color="dark">
+<div class="sidebar sidebar-style-2" data-background-color="dark2">
+    
     <div class="sidebar-logo">
         <!-- Logo Header -->
-        <div class="logo-header" data-background-color="dark">
-            <a href="{{ route('dashboard') }}" class="logo">
+        <div class="logo-header" data-background-color="dark2">
+            <a href="{{ route('dashboardAdmin') }}" class="logo">
                 <img src="{{ asset('assets/admin') }}/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
                     height="20" />
             </a>
@@ -18,65 +19,85 @@
         </div>
         <!-- End Logo Header -->
     </div>
+
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
+            <div class="profile-section">
+                <div class="user-profile d-flex flex-column align-items-center text-center py-4">
+                    <div class="avatar avatar-xl mb-3">
+                        <img src="assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                    </div>
+                    <div class="avatar avatar-minimize avatar-md mb-3 d-none">
+                        <img src="assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                    </div>
+                    <span class="user-name fw-bold mb-1">Hizrian Al-Asyi</span>
+                    <span class="user-level op-7">Administrator</span>
+                </div>
+
+            </div>
             <ul class="nav nav-secondary">
-                {{-- Dashboard --}}
-                <li class="nav-item {{ Route::is('dashboard') ? 'active' : '' }}">
-                    <a href="{{ route('dashboard') }}">
+                <!-- Dashboard -->
+                <li class="nav-item {{ Route::is('dashboardAdmin') ? 'active' : '' }}">
+                    <a href="{{ route('dashboardAdmin') }}">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                {{-- Dashboard --}}
+                <!-- End Dashboard -->
 
-                {{-- Set Users --}}
+                <!-- Set Users -->
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
                     <h4 class="text-section">Set Users</h4>
                 </li>
-                {{-- Set Users --}}
+                <!-- End Set Users -->
 
-                {{-- Profile --}}
-                <li class="nav-item {{ Route::is('profile.edit') ? 'active' : '' }}">
+                <!-- Profile -->
+                <li class="nav-item {{ Route::is('profileAdmin.index', 'profileAdmin.edit') ? 'active' : '' }}">
                     <a data-bs-toggle="collapse" href="#base">
                         <i class="fas fa-user"></i>
                         <p>Profile</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse {{ Route::is('profile.edit') ? 'show' : '' }}" id="base">
+                    <div class="collapse {{ Route::is('profileAdmin.index', 'profileAdmin.edit') ? 'show' : '' }}" id="base">
                         <ul class="nav nav-collapse">
-                            <li class="{{ Route::is('profile.edit') ? 'active' : '' }}">
-                                <a href="{{ route('profile.edit') }}">
+                            <li class="{{ Route::is('profileAdmin.index') ? 'active' : '' }}">
+                                <a href="{{ route('profileAdmin.index') }}">
+                                    <span class="sub-item">Lihat Profile</span>
+                                </a>
+                            </li>
+                            <li class="{{ Route::is('profileAdmin.edit') ? 'active' : '' }}">
+                                <a href="{{ route('profileAdmin.edit', ['profileAdmin' => 1]) }}">
                                     <span class="sub-item">Edit Profile</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                {{-- Profile --}}
+                             
+                <!-- End Profile -->
 
-                {{-- Reset Password --}}
+                <!-- Reset Password -->
                 <li class="nav-item {{ Route::is('password.reset') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fas fa-key"></i>
                         <p>Reset Password</p>
                     </a>
                 </li>
-                {{-- Reset Password --}}
+                <!-- End Reset Password -->
 
-                {{-- Master Data --}}
+                <!-- Master Data -->
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
                     <h4 class="text-section">Master Data</h4>
                 </li>
-                {{-- Master Data --}}
+                <!-- End Master Data -->
 
-                {{-- Produk --}}
+                <!-- Produk -->
                 <li class="nav-item {{ Route::is('produk.*') ? 'active' : '' }}">
                     <a data-bs-toggle="collapse" href="#produk">
                         <i class="fab fa-product-hunt"></i>
@@ -98,9 +119,9 @@
                         </ul>
                     </div>
                 </li>
-                {{-- Produk --}}
+                <!-- End Produk -->
 
-                {{-- Testimoni --}}
+                <!-- Testimoni -->
                 <li class="nav-item {{ Route::is('testimoni.*') ? 'active' : '' }}">
                     <a data-bs-toggle="collapse" href="#testimoni">
                         <i class="fas fa-comments"></i>
@@ -122,19 +143,18 @@
                         </ul>
                     </div>
                 </li>
-                {{-- Testimoni --}}
+                <!-- End Testimoni -->
 
-
-                {{-- Master Pengelompokan --}}
+                <!-- Master Pengelompokan -->
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
                     <h4 class="text-section">Master Pengelompokan</h4>
                 </li>
-                {{-- Master Pengelompokan --}}
+                <!-- End Master Pengelompokan -->
 
-                {{-- Jenis Produk --}}
+                <!-- Jenis Produk -->
                 <li class="nav-item {{ Route::is('jenisProduk.*') ? 'active' : '' }}">
                     <a data-bs-toggle="collapse" href="#sidebarLayouts">
                         <i class="fas fa-th-list"></i>
@@ -156,9 +176,9 @@
                         </ul>
                     </div>
                 </li>
-                {{-- Jenis Produk --}}
+                <!-- End Jenis Produk -->
 
-                {{-- Kategori Tokoh --}}
+                <!-- Kategori Tokoh -->
                 <li class="nav-item {{ Route::is('kategoriTokoh.*') ? 'active' : '' }}">
                     <a data-bs-toggle="collapse" href="#kategoriTokoh">
                         <i class="fas fa-th-list"></i>
@@ -171,6 +191,8 @@
                                 <a href="{{ route('kategoriTokoh.create') }}">
                                     <span class="sub-item">Tambah Data</span>
                                 </a>
+                            </li>
+                            <li class="{{ Route::is('kategoriTokoh.index') ? 'active' : '' }}">
                                 <a href="{{ route('kategoriTokoh.index') }}">
                                     <span class="sub-item">List Data</span>
                                 </a>
@@ -178,56 +200,59 @@
                         </ul>
                     </div>
                 </li>
-                {{-- Kategori Tokoh --}}
+                <!-- End Kategori Tokoh -->
 
-                {{-- Konfigurasi --}}
+                <!-- Konfigurasi -->
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
                     <h4 class="text-section">Konfigurasi</h4>
                 </li>
-                {{-- Konfigurasi --}}
+                <!-- End Konfigurasi -->
 
-                {{-- Account Users --}}
-                <li class="nav-item {{ Route::is('accountUsers.*') ? 'active' : '' }}">
-                    <a data-bs-toggle="collapse" href="#accountUsers">
+                <!-- Account Users -->
+                <li class="nav-item {{ Route::is('user.*') ? 'active' : '' }}">
+                    <a data-bs-toggle="collapse" href="#user">
                         <i class="fas fa-users"></i>
                         <p>Account Users</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse {{ Route::is('accountUsers.*') ? 'show' : '' }}" id="accountUsers">
+                    <div class="collapse {{ Route::is('user.*') ? 'show' : '' }}" id="user">
                         <ul class="nav nav-collapse">
-                            <li class="{{ Route::is('accountUsers.create') ? 'active' : '' }}">
-                                <a href="#">
+                            <li class="{{ Route::is('user.create') ? 'active' : '' }}">
+                                <a href="{{ route('user.create') }}">
                                     <span class="sub-item">Tambah Data</span>
                                 </a>
-                                <a href="#">
+                            </li>
+                            <li class="{{ Route::is('user.index') ? 'active' : '' }}">
+                                <a href="{{ route('user.index') }}">
                                     <span class="sub-item">List Data</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                {{-- Account Users --}}
+                <!-- End Account Users -->
 
-                {{-- Keluar Administrator --}}
+
+                <!-- Keluar Administrator -->
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
                     <h4 class="text-section">Keluar Administrator</h4>
                 </li>
-                {{-- Keluar Administrator --}}
+                <!-- End Keluar Administrator -->
 
-                {{-- Logout --}}
+                <!-- Logout -->
                 <li class="nav-item">
                     <a href="{{ route('logout') }}">
                         <i class="fas fa-home"></i>
                         <p>Logout</p>
                     </a>
                 </li>
-                {{-- Logout --}}
+                <!-- End Logout -->
             </ul>
         </div>
     </div>
