@@ -4,11 +4,19 @@
     @include('admin.partials.sidebar')
     <div class="main-panel">
         @include('admin.partials.navbar')
+
+        {{-- Save Session --}}
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+        {{-- Save Session --}}
         
         {{-- Contents --}}
         @yield('content')
         {{-- Contents --}}
-        
+
         @include('admin.partials.footer_ui')
         {{-- Custom Template --}}
 

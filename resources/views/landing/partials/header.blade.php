@@ -26,10 +26,21 @@
     <link href="{{ asset('assets/landing/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset('assets/landing/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/landing/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{ asset('assets/landing/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/landing/css/style.css') }}" rel="stylesheet">
 </head>
+
+{{-- Alert Logout --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        @if (Session::has('success'))
+            alert("{{ Session::get('success') }}");
+        @endif
+    });
+</script>
+{{-- Alert Logout --}}
+
 
 <body>

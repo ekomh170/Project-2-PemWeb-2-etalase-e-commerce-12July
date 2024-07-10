@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -26,33 +27,30 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
-        // Arahkan berdasarkan role pengguna
         $user = Auth::user();
-        // dd($user);
+
         if ($user->role === 'admin') {
+            Session::flash('success', 'Selamat datang Admin!');
             return redirect()->intended(route('dashboardAdmin'));
         } elseif ($user->role === 'member') {
+            Session::flash('success', 'Selamat datang Member!');
             return redirect()->intended(route('dashboard'));
         }
 
-        // Default redirect jika tidak ada role yang sesuai
+        Session::flash('success', 'Selamat datang!');
         return redirect()->intended(route('/'));
     }
 
-    /**
-     * Destroy an authenticated session.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
+        Session::flash('success', 'Anda telah berhasil logout.');
         return redirect('/');
     }
 }
