@@ -26,11 +26,11 @@
                 <div class="user-profile d-flex flex-column align-items-center text-center py-4">
                     <div class="avatar avatar-xl mb-3">
                         <img src="{{ Auth::user()->profile->foto ? asset('storage/' . Auth::user()->profile->foto) : 'assets/img/default-avatar.png' }}"
-                            alt="..." class="avatar-img rounded-circle">
+                            alt="{{ Auth::user()->name }}." class="avatar-img rounded-circle">
                     </div>
                     <div class="avatar avatar-minimize avatar-md mb-3 d-none">
                         <img src="{{ Auth::user()->profile->foto ? asset('storage/' . Auth::user()->profile->foto) : 'assets/img/default-avatar.png' }}"
-                            alt="..." class="avatar-img rounded-circle">
+                            alt="{{ Auth::user()->name }}" class="avatar-img rounded-circle">
                     </div>
                     <span class="user-name fw-bold mb-1">{{ Auth::user()->name }}</span>
                     <span class="user-level op-7">{{ Auth::user()->role }}</span>

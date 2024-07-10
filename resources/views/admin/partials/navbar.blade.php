@@ -54,60 +54,60 @@
             <div class="quick-actions-scroll scrollbar-outer">
               <div class="quick-actions-items">
                 <div class="row m-0">
-                  <a class="col-6 col-md-4 p-0" href="#">
+                  <a class="col-6 col-md-4 p-0" href="{{ route('produk.index') }}">
                     <div class="quick-actions-item">
                       <div class="avatar-item bg-danger rounded-circle">
-                        <i class="far fa-calendar-alt"></i>
+                        <i class="fab fa-product-hunt"></i>
                       </div>
-                      <span class="text">Calendar</span>
+                      <span class="text">Produk</span>
                     </div>
                   </a>
-                  <a class="col-6 col-md-4 p-0" href="#">
+                  <a class="col-6 col-md-4 p-0" href="{{ route('testimoni.index') }}">
                     <div class="quick-actions-item">
                       <div
                         class="avatar-item bg-warning rounded-circle"
                       >
-                        <i class="fas fa-map"></i>
+                        <i class="fas fa-comments"></i>
                       </div>
-                      <span class="text">Maps</span>
+                      <span class="text">Testimoni</span>
                     </div>
                   </a>
-                  <a class="col-6 col-md-4 p-0" href="#">
+                  <a class="col-6 col-md-4 p-0" href="{{ route('jenisProduk.index') }}">
                     <div class="quick-actions-item">
                       <div class="avatar-item bg-info rounded-circle">
-                        <i class="fas fa-file-excel"></i>
+                        <i class="fas fa-th-list"></i>
                       </div>
-                      <span class="text">Reports</span>
+                      <span class="text">Jenis Produk</span>
                     </div>
                   </a>
-                  <a class="col-6 col-md-4 p-0" href="#">
+                  <a class="col-6 col-md-4 p-0" href="{{ route('kategoriTokoh.index') }}">
                     <div class="quick-actions-item">
                       <div
                         class="avatar-item bg-success rounded-circle"
                       >
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-th-list"></i>
                       </div>
-                      <span class="text">Emails</span>
+                      <span class="text">Kategori Tokoh</span>
                     </div>
                   </a>
-                  <a class="col-6 col-md-4 p-0" href="#">
+                  <a class="col-6 col-md-4 p-0" href="{{ route('user.index') }}">
                     <div class="quick-actions-item">
                       <div
                         class="avatar-item bg-primary rounded-circle"
                       >
-                        <i class="fas fa-file-invoice-dollar"></i>
+                        <i class="fas fa-users"></i>
                       </div>
-                      <span class="text">Invoice</span>
+                      <span class="text">Account Users</span>
                     </div>
                   </a>
-                  <a class="col-6 col-md-4 p-0" href="#">
+                  <a class="col-6 col-md-4 p-0" href="{{ route('profileAdmin.show', ['profileAdmin' => Auth::user()->id]) }}">
                     <div class="quick-actions-item">
                       <div
                         class="avatar-item bg-secondary rounded-circle"
                       >
-                        <i class="fas fa-credit-card"></i>
+                        <i class="fas fa-user"></i>
                       </div>
-                      <span class="text">Payments</span>
+                      <span class="text">Profile </span>
                     </div>
                   </a>
                 </div>
