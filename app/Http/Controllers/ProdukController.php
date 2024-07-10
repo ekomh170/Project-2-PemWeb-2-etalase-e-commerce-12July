@@ -106,7 +106,7 @@ class ProdukController extends Controller
 
     $data = $request->all();
 
-    dd($data);
+    // dd($data);
 
     if ($request->hasFile('gambar_produk')) {
         // Cek apakah ada gambar lama dan apakah file tersebut ada di penyimpanan
