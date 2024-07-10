@@ -110,6 +110,9 @@
                     <div class="collapse {{ Route::is('testimoni.index') ? 'show' : '' }}" id="tables">
                         <ul class="nav nav-collapse">
                             <li class="{{ Route::is('testimoni.index') ? 'active' : '' }}">
+                                <a href="{{ route('testimoni.create') }}">
+                                    <span class="sub-item">Tambah Data</span>
+                                </a>
                                 <a href="{{ route('testimoni.index') }}">
                                     <span class="sub-item">List Data</span>
                                 </a>
