@@ -4,62 +4,72 @@ namespace App\Http\Controllers;
 
 use App\Models\KategoriTokoh;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class KategoriTokohController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return view('admin.pages.kategoriTokoh.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function getData()
+    {
+        $kategoriTokoh = KategoriTokoh::select('*');
+
+        return DataTables::of($kategoriTokoh)
+            ->addIndexColumn()
+            ->addColumn('action', function ($item) {
+                return view('admin.pages.kategoriTokoh.actions', compact('item'))->render();
+            })
+            ->make(true);
+    }
+
     public function create()
     {
-        //
+        return view('admin.pages.kategoriTokoh.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required|string|max:45',
+        ]);
+
+        KategoriTokoh::create($request->all());
+
+        return redirect()->route('kategoriTokoh.index')->with('success', 'Kategori tokoh berhasil ditambahkan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(KategoriTokoh $kategoriTokoh)
     {
-        //
+        $testimoniList = $kategoriTokoh->testimoni; // Mendapatkan daftar testimoni yang terkait dengan kategori tokoh ini
+        return view('admin.pages.kategoriTokoh.show', compact('kategoriTokoh', 'testimoniList'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(KategoriTokoh $kategoriTokoh)
     {
-        //
+        return view('admin.pages.kategoriTokoh.edit', compact('kategoriTokoh'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, KategoriTokoh $kategoriTokoh)
     {
-        //
+        $request->validate([
+            'nama' => 'required|string|max:45',
+        ]);
+
+        $kategoriTokoh->update($request->all());
+
+        return redirect()->route('kategoriTokoh.index')->with('success', 'Kategori tokoh berhasil diperbarui.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(KategoriTokoh $kategoriTokoh)
     {
-        //
+        try {
+            $kategoriTokoh->delete();
+            return redirect()->route('kategoriTokoh.index')->with('success', 'Kategori tokoh berhasil dihapus.');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('kategoriTokoh.index')->with('error', 'Kategori tokoh tidak dapat dihapus karena masih digunakan oleh testimoni lain.');
+        }
     }
 }

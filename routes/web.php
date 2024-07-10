@@ -108,6 +108,7 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
 
     // Kategori Tokoh
     Route::get('/admin/kategoriTokoh', [KategoriTokohController::class, 'index'])->name('kategoriTokoh.index');
+    Route::get('/panel/kategoriTokoh/data', [KategoriTokohController::class, 'getData'])->name('kategoriTokoh.data');
     Route::get('/admin/kategoriTokoh/create', [KategoriTokohController::class, 'create'])->name('kategoriTokoh.create');
     Route::post('/admin/kategoriTokoh/store', [KategoriTokohController::class, 'store'])->name('kategoriTokoh.store');
     Route::get('/admin/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'show'])->name('kategoriTokoh.show');
