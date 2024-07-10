@@ -2,32 +2,39 @@
   <div class="main-header-logo">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="dark2">
-      <a href="index.html" class="logo">
-        {{-- <img
-          src="{{ asset('assets/admin')}}/img/kaiadmin/logo_light.svg"
-          alt="navbar brand"
-          class="navbar-brand"
-          height="20"
-        /> --}}
-      </a>
-      <button
-        class="navbar-toggler sidenav-toggler ms-auto"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="collapse"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon">
-          <i class="gg-menu-left"></i>
-        </span>
-      </button>
-      <button class="topbar-toggler more">
-        <i class="gg-more-vertical-alt"></i>
-      </button>
+        <a href="index.html" class="logo">
+            <span class="navbar-brand" style="
+                font-family: 'Roboto', sans-serif;
+                font-size: 20px;
+                font-weight: bold;
+                color: orange;
+                transition: color 0.3s ease;
+            " onmouseover="this.style.color='#ff7518'" onmouseout="this.style.color='orange'">
+                TESTI MART
+            </span>
+        </a>
+        <button class="navbar-toggler sidenav-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="false" aria-label="Toggle navigation" style="
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <span class="navbar-toggler-icon">
+                <i class="gg-menu-left" style="font-size: 24px; color: white;"></i>
+            </span>
+        </button>
+        <button class="topbar-toggler more" style="
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <i class="gg-more-vertical-alt" style="font-size: 24px; color: white;"></i>
+        </button>
     </div>
     <!-- End Logo Header -->
-  </div>
+</div>
+
   <!-- Navbar Header -->
   <nav
     class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
