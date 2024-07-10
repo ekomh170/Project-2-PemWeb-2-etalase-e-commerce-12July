@@ -101,18 +101,20 @@
                 {{-- Produk --}}
 
                 {{-- Testimoni --}}
-                <li class="nav-item {{ Route::is('testimoni.index') ? 'active' : '' }}">
-                    <a data-bs-toggle="collapse" href="#tables">
+                <li class="nav-item {{ Route::is('testimoni.*') ? 'active' : '' }}">
+                    <a data-bs-toggle="collapse" href="#testimoni">
                         <i class="fas fa-comments"></i>
                         <p>Testimoni</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse {{ Route::is('testimoni.index') ? 'show' : '' }}" id="tables">
+                    <div class="collapse {{ Route::is('testimoni.*') ? 'show' : '' }}" id="testimoni">
                         <ul class="nav nav-collapse">
-                            <li class="{{ Route::is('testimoni.index') ? 'active' : '' }}">
+                            <li class="{{ Route::is('testimoni.create') ? 'active' : '' }}">
                                 <a href="{{ route('testimoni.create') }}">
                                     <span class="sub-item">Tambah Data</span>
                                 </a>
+                            </li>
+                            <li class="{{ Route::is('testimoni.index') ? 'active' : '' }}">
                                 <a href="{{ route('testimoni.index') }}">
                                     <span class="sub-item">List Data</span>
                                 </a>
@@ -121,6 +123,7 @@
                     </div>
                 </li>
                 {{-- Testimoni --}}
+
 
                 {{-- Master Pengelompokan --}}
                 <li class="nav-section">

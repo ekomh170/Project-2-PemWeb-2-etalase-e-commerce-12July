@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Testimoni;
 use App\Models\Produk;
 use App\Models\KategoriTokoh;
-use Illuminate\Http\Request;
-use Yajra\DataTables\Facades\DataTables;
-
+use Yajra\DataTables\DataTables;
 
 class TestimoniController extends Controller
 {
@@ -30,7 +29,9 @@ class TestimoniController extends Controller
 
     public function create()
     {
-        return view('admin.pages.testimoni.create');
+        $produk = Produk::all();
+        $kategoriTokoh = KategoriTokoh::all();
+        return view('admin.pages.testimoni.create', compact('produk', 'kategoriTokoh'));
     }
 
     public function store(Request $request)
