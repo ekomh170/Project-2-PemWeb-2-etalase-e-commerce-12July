@@ -1,12 +1,12 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Edit Pengguna')
+@section('title', 'Edit Account Users')
 
 @section('content')
     <div class="container">
         <div class="page-inner">
             <div class="page-header">
-                <h3 class="fw-bold mb-3">Edit Data - Pengguna</h3>
+                <h3 class="fw-bold mb-3">Edit Data - Account Users</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
                         <a href="#">
@@ -23,13 +23,13 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('user.index') }}">Pengguna</a>
+                        <a href="{{ route('user.index') }}">Account Users</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Edit Pengguna</a>
+                        <a href="#">Edit Account Users</a>
                     </li>
                 </ul>
             </div>
@@ -98,7 +98,7 @@
                                     <input type="url" name="linkedin" id="linkedin" class="form-control" value="{{ $profile->linkedin }}">
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <a href="{{ route('user.index') }}" class="btn btn-secondary">Kembali ke Pengguna</a>
+                                    <a href="{{ route('user.index') }}" class="btn btn-secondary">Kembali ke Account Users</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
                             </form>

@@ -1,6 +1,6 @@
 <!-- Sidebar -->
 <div class="sidebar sidebar-style-2" data-background-color="dark2">
-    
+
     <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark2">
@@ -25,16 +25,18 @@
             <div class="profile-section">
                 <div class="user-profile d-flex flex-column align-items-center text-center py-4">
                     <div class="avatar avatar-xl mb-3">
-                        <img src="assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                        <img src="{{ Auth::user()->profile->foto ? asset('storage/' . Auth::user()->profile->foto) : 'assets/img/default-avatar.png' }}"
+                            alt="..." class="avatar-img rounded-circle">
                     </div>
                     <div class="avatar avatar-minimize avatar-md mb-3 d-none">
-                        <img src="assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                        <img src="{{ Auth::user()->profile->foto ? asset('storage/' . Auth::user()->profile->foto) : 'assets/img/default-avatar.png' }}"
+                            alt="..." class="avatar-img rounded-circle">
                     </div>
-                    <span class="user-name fw-bold mb-1">Hizrian Al-Asyi</span>
-                    <span class="user-level op-7">Administrator</span>
+                    <span class="user-name fw-bold mb-1">{{ Auth::user()->name }}</span>
+                    <span class="user-level op-7">{{ Auth::user()->role }}</span>
                 </div>
-
             </div>
+
             <ul class="nav nav-secondary">
                 <!-- Dashboard -->
                 <li class="nav-item {{ Route::is('dashboardAdmin') ? 'active' : '' }}">
@@ -55,29 +57,30 @@
                 <!-- End Set Users -->
 
                 <!-- Profile -->
-                <li class="nav-item {{ Route::is('profileAdmin.index', 'profileAdmin.edit') ? 'active' : '' }}">
+                <li class="nav-item {{ Route::is('profileAdmin.show', 'profileAdmin.edit') ? 'active' : '' }}">
                     <a data-bs-toggle="collapse" href="#base">
                         <i class="fas fa-user"></i>
                         <p>Profile</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse {{ Route::is('profileAdmin.index', 'profileAdmin.edit') ? 'show' : '' }}" id="base">
+                    <div class="collapse {{ Route::is('profileAdmin.show', 'profileAdmin.edit') ? 'show' : '' }}"
+                        id="base">
                         <ul class="nav nav-collapse">
-                            <li class="{{ Route::is('profileAdmin.index') ? 'active' : '' }}">
-                                <a href="{{ route('profileAdmin.index') }}">
+                            <li class="{{ Route::is('profileAdmin.show') ? 'active' : '' }}">
+                                <a href="{{ route('profileAdmin.show', ['profileAdmin' => Auth::user()->id]) }}">
                                     <span class="sub-item">Lihat Profile</span>
                                 </a>
                             </li>
                             <li class="{{ Route::is('profileAdmin.edit') ? 'active' : '' }}">
-                                <a href="{{ route('profileAdmin.edit', ['profileAdmin' => 1]) }}">
+                                <a href="{{ route('profileAdmin.edit', ['profileAdmin' => Auth::user()->id]) }}">
                                     <span class="sub-item">Edit Profile</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                             
                 <!-- End Profile -->
+
 
                 <!-- Reset Password -->
                 <li class="nav-item {{ Route::is('password.reset') ? 'active' : '' }}">
@@ -247,10 +250,15 @@
 
                 <!-- Logout -->
                 <li class="nav-item">
-                    <a href="{{ route('logout') }}">
-                        <i class="fas fa-home"></i>
-                        <p>Logout</p>
-                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); 
+                this.closest('form').submit();">
+                            <i class="fas fa-home"></i>
+                            <p>Logout</p>
+                        </a>
+                    </form>
                 </li>
                 <!-- End Logout -->
             </ul>

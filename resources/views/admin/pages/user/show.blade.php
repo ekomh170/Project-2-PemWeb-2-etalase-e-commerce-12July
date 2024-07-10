@@ -1,12 +1,12 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Detail Pengguna')
+@section('title', 'Detail Account Users')
 
 @section('content')
     <div class="container">
         <div class="page-inner">
             <div class="page-header">
-                <h3 class="fw-bold mb-3">Detail Pengguna</h3>
+                <h3 class="fw-bold mb-3">Detail Account Users</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
                         <a href="#">
@@ -23,13 +23,13 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Pengguna</a>
+                        <a href="#">Account Users</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Detail Pengguna</a>
+                        <a href="#">Detail Account Users</a>
                     </li>
                 </ul>
             </div>

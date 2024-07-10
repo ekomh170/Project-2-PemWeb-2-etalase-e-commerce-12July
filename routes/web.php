@@ -80,11 +80,12 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     // Dashboard Admin
 
     // Profile Admin
-    Route::get('/panel/profileAdmin', [ProfileAdminController::class, 'index'])->name('profileAdmin.index');
+    Route::get('/panel/profileAdmin/{profileAdmin}/show', [ProfileAdminController::class, 'show'])->name('profileAdmin.show');
     Route::get('/panel/profileAdmin/{profileAdmin}/edit', [ProfileAdminController::class, 'edit'])->name('profileAdmin.edit');
+    Route::put('/panel/profileAdmin/{profileAdmin}', [ProfileAdminController::class, 'update'])->name('profileAdmin.update');
     // Profile Admin
 
-
+    // Produk
     Route::get('/panel/produk', [ProdukController::class, 'index'])->name('produk.index');
     Route::get('/panel/produk/data', [ProdukController::class, 'getData'])->name('produk.data');
     Route::get('/panel/produk/create', [ProdukController::class, 'create'])->name('produk.create');
