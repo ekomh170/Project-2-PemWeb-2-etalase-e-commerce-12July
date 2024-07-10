@@ -7,7 +7,10 @@ use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\JenisProdukController;
 use App\Http\Controllers\KategoriTokohController;
 use App\Http\Middleware\RoleMiddleware;
-// use App\Http\Controllers\AccountUserController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileAdminController;
+
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -52,24 +55,36 @@ require __DIR__ . '/auth.php';
 
 // Administrator
 // Dashboard
-Route::get('/dashboard', function () {
+Route::get('/dashboard_member', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Dashboard
 
 // Profile
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile_member', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile_member', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile_member', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 // Profile
 
 
 // Master Data Utama
 // Produk
-
 Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function () {
+
+    // Dashboard Admin
+    Route::get('/dashboardAdmin', function () {
+        return view('admin.pages.dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboardAdmin');
+    // Dashboard Admin
+
+    // Profile Admin
+    Route::get('/panel/profileAdmin', [ProfileAdminController::class, 'index'])->name('profileAdmin.index');
+    Route::get('/panel/profileAdmin/{profileAdmin}/edit', [ProfileAdminController::class, 'edit'])->name('profileAdmin.edit');
+    // Profile Admin
+
+
     Route::get('/panel/produk', [ProdukController::class, 'index'])->name('produk.index');
     Route::get('/panel/produk/data', [ProdukController::class, 'getData'])->name('produk.data');
     Route::get('/panel/produk/create', [ProdukController::class, 'create'])->name('produk.create');
@@ -107,29 +122,33 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     // Jenis Produk
 
     // Kategori Tokoh
-    Route::get('/admin/kategoriTokoh', [KategoriTokohController::class, 'index'])->name('kategoriTokoh.index');
+    Route::get('/panel/kategoriTokoh', [KategoriTokohController::class, 'index'])->name('kategoriTokoh.index');
     Route::get('/panel/kategoriTokoh/data', [KategoriTokohController::class, 'getData'])->name('kategoriTokoh.data');
-    Route::get('/admin/kategoriTokoh/create', [KategoriTokohController::class, 'create'])->name('kategoriTokoh.create');
-    Route::post('/admin/kategoriTokoh/store', [KategoriTokohController::class, 'store'])->name('kategoriTokoh.store');
-    Route::get('/admin/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'show'])->name('kategoriTokoh.show');
-    Route::get('/admin/kategoriTokoh/{kategoriTokoh}/edit', [KategoriTokohController::class, 'edit'])->name('kategoriTokoh.edit');
-    Route::put('/admin/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'update'])->name('kategoriTokoh.update');
-    Route::delete('/admin/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'destroy'])->name('kategoriTokoh.destroy');
+    Route::get('/panel/kategoriTokoh/create', [KategoriTokohController::class, 'create'])->name('kategoriTokoh.create');
+    Route::post('/panel/kategoriTokoh/store', [KategoriTokohController::class, 'store'])->name('kategoriTokoh.store');
+    Route::get('/panel/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'show'])->name('kategoriTokoh.show');
+    Route::get('/panel/kategoriTokoh/{kategoriTokoh}/edit', [KategoriTokohController::class, 'edit'])->name('kategoriTokoh.edit');
+    Route::put('/panel/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'update'])->name('kategoriTokoh.update');
+    Route::delete('/panel/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'destroy'])->name('kategoriTokoh.destroy');
     // Kategori Tokoh
     // Master Pengelompokan
 
 
     // Konfigurasi
     // Account Users
-
+    Route::get('/panel/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/panel/user/data', [UserController::class, 'getData'])->name('user.data');
+    Route::get('/panel/user/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('/panel/user/store', [UserController::class, 'store'])->name('user.store');
+    Route::get('/panel/user/{user}', [UserController::class, 'show'])->name('user.show');
+    Route::get('/panel/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/panel/user/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/panel/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
     // Account Users
     // Konfigurasi
 });
 
 // Administrator
-
-
-
 
 // Testing Development ==============================================
 Route::get('/landing', function () {

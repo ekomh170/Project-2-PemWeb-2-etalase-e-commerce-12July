@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Profile;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -50,12 +52,32 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8',
             'role' => 'required|in:admin,member',
+            'alamat' => 'nullable|string|max:255',
+            'nomer_hp' => 'nullable|string|max:15',
+            'tanggal_lahir' => 'nullable|date',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'jenis_kelamin' => 'nullable|in:Laki-Laki,Perempuan',
+            'bio' => 'nullable|string',
+            'website' => 'nullable|string|max:255',
+            'hobi' => 'nullable|string',
+            'linkedin' => 'nullable|string|max:255',
         ]);
 
         $data = $request->only(['name', 'email', 'password', 'role']);
         $data['password'] = Hash::make($data['password']);
 
-        User::create($data);
+        $user = User::create($data);
+
+        $profileData = $request->only(['alamat', 'nomer_hp', 'tanggal_lahir', 'jenis_kelamin', 'bio', 'website', 'hobi', 'linkedin']);
+        
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/profile', $filename);
+            $profileData['foto'] = 'profile/' . $filename;
+        }
+
+        $user->profile()->create($profileData);
 
         return redirect()->route('user.index')->with('success', 'Pengguna berhasil ditambahkan.');
     }
@@ -65,7 +87,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('admin.pages.user.show', compact('user'));
+        $profile = $user->profile;
+        return view('admin.pages.user.show', compact('user', 'profile'));
     }
 
     /**
@@ -73,7 +96,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.pages.user.edit', compact('user'));
+        $profile = $user->profile;
+        return view('admin.pages.user.edit', compact('user', 'profile'));
     }
 
     /**
@@ -85,22 +109,50 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'role' => 'required|in:admin,member',
+            'alamat' => 'nullable|string|max:255',
+            'nomer_hp' => 'nullable|string|max:15',
+            'tanggal_lahir' => 'nullable|date',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'jenis_kelamin' => 'nullable|in:Laki-Laki,Perempuan',
+            'bio' => 'nullable|string',
+            'website' => 'nullable|string|max:255',
+            'hobi' => 'nullable|string',
+            'linkedin' => 'nullable|string|max:255',
         ]);
 
         $data = $request->only(['name', 'email', 'role']);
-
         $user->update($data);
+
+        $profileData = $request->only(['alamat', 'nomer_hp', 'tanggal_lahir', 'jenis_kelamin', 'bio', 'website', 'hobi', 'linkedin']);
+        
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/profile', $filename);
+            $profileData['foto'] = 'profile/' . $filename;
+        }
+
+        $user->profile()->updateOrCreate(['user_id' => $user->id], $profileData);
 
         return redirect()->route('user.index')->with('success', 'Informasi pengguna berhasil diperbarui.');
     }
 
     /**
-     * Menghapus pengguna dari database.
+     * Menghapus pengguna dan profil dari database.
      */
     public function destroy(User $user)
     {
+        // Hapus foto profil jika ada
+        if ($user->profile && $user->profile->foto) {
+            Storage::delete('public/' . $user->profile->foto);
+        }
+
+        // Hapus profil pengguna
+        $user->profile()->delete();
+        
+        // Hapus pengguna
         $user->delete();
 
-        return redirect()->route('user.index')->with('success', 'Pengguna berhasil dihapus.');
+        return redirect()->route('user.index')->with('success', 'Pengguna dan profil berhasil dihapus.');
     }
 }
