@@ -34,26 +34,9 @@ Route::get('/contact', [LandingController::class, 'contact'])->name('landing.con
 // Landing Page ==============================================
 
 
-
 // Set Auth ==============================================
 require __DIR__ . '/auth.php';
 // Set Auth ==============================================
-
-
-// Administrator
-// Dashboard
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-// Dashboard
-
-// Profile
-Route::middleware('auth')->group(function () {
-    Route::get('/profile_member', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile_member', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile_member', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-// Profile
 
 
 // Master Data Utama
@@ -132,12 +115,24 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group
 
 // Administrator
 
-// Testing Development ==============================================
-Route::get('/landing', function () {
-    return view('landing.pages.index');
+
+
+// Member
+Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin', RoleMiddleware::class . ':member'])->group(function () {
+    // Administrator
+    // Dashboard
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+    // Dashboard
+
+    // Profile
+    Route::middleware('auth')->group(function () {
+        Route::get('/profile_member', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile_member', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile_member', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
+    // Profile
 });
 
-Route::get('/admin', function () {
-    return view('admin.pages.dashboard');
-});
-// Testing Development ==============================================
+// Member
