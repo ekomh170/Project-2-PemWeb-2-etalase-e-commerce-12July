@@ -10,6 +10,10 @@ use App\Http\Middleware\RoleMiddleware;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\LandingController;
+
+use App\Http\Controllers\DashboardMemberController;
+use App\Http\Controllers\ProdukMemberController;
+use App\Http\Controllers\TestimoniMemberController;
 use Illuminate\Support\Facades\Route;
 
 // Landing Page ==============================================
@@ -116,15 +120,23 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group
 // Administrator
 
 
-
 // Member
 Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin', RoleMiddleware::class . ':member'])->group(function () {
     // Administrator
+
     // Dashboard
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/dashboard', [DashboardMemberController::class, 'index'])->name('dashboard');
     // Dashboard
+
+    // Produk
+    Route::get('/produk', [ProdukMemberController::class, 'index'])->name('produkmember.index');
+    Route::get('/produkmember/{produk}', [ProdukMemberController::class, 'show'])->name('produk.show');
+    // Produk
+
+    // Testimoni
+    Route::get('/testimoni', [TestimoniMemberController::class, 'index'])->name('testimonimember.index');
+    Route::get('/testimonimember/{testimoni}', [TestimoniMemberController::class, 'show'])->name('testimoni.show');
+    // Testimoni
 
     // Profile
     Route::middleware('auth')->group(function () {
@@ -134,5 +146,4 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin', RoleMid
     });
     // Profile
 });
-
 // Member
