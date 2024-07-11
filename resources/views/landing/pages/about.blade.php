@@ -10,7 +10,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                 <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                    <img class="img-fluid w-100" src="img/about.jpg" alt="Tentang Kami">
+                    <img class="img-fluid w-100" src="{{ asset('assets/landing/img/About_Sketsa_Toko.jpg')}}" alt="Tentang Kami">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -52,7 +52,6 @@
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
                     <h4 class="mb-3">Proses Alamiah</h4>
                     <p class="mb-4">Kami menjamin bahwa produk-produk yang dijual di Testi Mart melalui proses alamiah yang aman dan sehat.</p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Selengkapnya</a>
@@ -60,7 +59,6 @@
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
                     <h4 class="mb-3">Produk Organik</h4>
                     <p class="mb-4">Kami menyediakan produk-produk organik yang aman untuk dikonsumsi dan ramah lingkungan.</p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Selengkapnya</a>
@@ -68,7 +66,6 @@
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
                     <h4 class="mb-3">Aman Secara Biologis</h4>
                     <p class="mb-4">Produk kami telah melalui uji keamanan secara biologis untuk memastikan kualitas dan keamanan konsumsi.</p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Selengkapnya</a>

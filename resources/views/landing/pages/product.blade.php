@@ -640,7 +640,6 @@
                     <p class="mb-4">Saya sangat puas dengan kualitas buah dan sayuran organik dari Testi Mart. Segar dan
                         sehat!</p>
                     <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" alt="">
                         <div class="ms-3">
                             <h5 class="mb-1">Budi Santoso</h5>
                             <span>Pelanggan Setia</span>
