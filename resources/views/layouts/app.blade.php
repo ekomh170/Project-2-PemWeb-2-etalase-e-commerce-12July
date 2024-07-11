@@ -19,6 +19,36 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        body {
+            background-color: #000000; /* Black background */
+            color: #FFA500; /* Orange text */
+        }
+        header, .bg-white {
+            background-color: #1a1a1a; /* Darker shade for headers and content background */
+        }
+        .text-gray-800 {
+            color: #FFA500; /* Orange text for headers */
+        }
+        .bg-gray-100 {
+            background-color: #1a1a1a; /* Darker shade for the main content background */
+        }
+        .shadow {
+            box-shadow: 0 2px 4px rgba(255, 165, 0, 0.2); /* Orange shadow */
+        }
+        a {
+            color: #FFA500; /* Orange links */
+        }
+        .btn-primary {
+            background-color: #FFA500;
+            border-color: #FFA500;
+        }
+        .btn-primary:hover {
+            background-color: #cc8400;
+            border-color: #cc8400;
+        }
+    </style>
 </head>
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">

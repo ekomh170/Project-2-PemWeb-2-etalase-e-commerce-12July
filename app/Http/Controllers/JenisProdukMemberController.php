@@ -11,7 +11,8 @@ class JenisProdukMemberController extends Controller
      */
     public function index()
     {
-        //
+        return view('jenisproduk.index');
+
     }
 
     /**

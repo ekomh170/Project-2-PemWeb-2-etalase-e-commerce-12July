@@ -11,7 +11,7 @@ class KategoriTokohMemberController extends Controller
      */
     public function index()
     {
-        return view('produk.index');
+        return view('kategoritokoh.index');
     }
 
     /**
