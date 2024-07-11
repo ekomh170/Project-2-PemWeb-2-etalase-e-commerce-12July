@@ -29,8 +29,8 @@
                         <div class="row justify-content-start">
                             <div class="col-lg-7">
                                 <h1 class="display-2 mb-5 animated slideInDown" style="color: orange;">Pilihan Makanan Alami dan Sehat</h1>
-                                <a href="#" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Lihat Pilihan Kami</a>
-                                <a href="#" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Layanan yang Kami Tawarkan</a>
+                                <a href="{{ url('/product') }}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Jelajahi Produk Kami</a>
+                                <a href="{{ route('login') }}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Bergabung Sebagai Testimoni Kami</a>
                             </div>
                         </div>
                     </div>

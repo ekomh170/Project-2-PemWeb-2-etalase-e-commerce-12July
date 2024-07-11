@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TestimoniMemberController extends Controller
+class KategoriTokohMemberController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('testimoni.index');
+        return view('produk.index');
     }
 
     /**
