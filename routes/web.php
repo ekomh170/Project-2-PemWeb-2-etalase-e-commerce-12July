@@ -14,6 +14,10 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DashboardMemberController;
 use App\Http\Controllers\ProdukMemberController;
 use App\Http\Controllers\TestimoniMemberController;
+use App\Http\Controllers\JenisProdukMemberController;
+use App\Http\Controllers\KategoriTokohMemberController;
+
+
 use Illuminate\Support\Facades\Route;
 
 // Landing Page ==============================================
@@ -116,27 +120,36 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group
     // Account Users
     // Konfigurasi
 });
-
 // Administrator
 
 
 // Member
-Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin', RoleMiddleware::class . ':member'])->group(function () {
+Route::middleware(['auth', 'verified', RoleMiddleware::class . ':member'])->group(function () {
     // Administrator
 
-    // Dashboard
+    // Dashboard - Member
     Route::get('/dashboard', [DashboardMemberController::class, 'index'])->name('dashboard');
-    // Dashboard
+    // Dashboard - Member
 
-    // Produk
-    Route::get('/produk', [ProdukMemberController::class, 'index'])->name('produkmember.index');
-    Route::get('/produkmember/{produk}', [ProdukMemberController::class, 'show'])->name('produk.show');
-    // Produk
+    // Produk - Member
+    Route::get('/produkmember', [ProdukMemberController::class, 'index'])->name('produkmember.index');
+    Route::get('/produkmember/{produk}', [ProdukMemberController::class, 'show'])->name('produkmember.show');
+    // Produk - Member
 
-    // Testimoni
-    Route::get('/testimoni', [TestimoniMemberController::class, 'index'])->name('testimonimember.index');
-    Route::get('/testimonimember/{testimoni}', [TestimoniMemberController::class, 'show'])->name('testimoni.show');
-    // Testimoni
+    // Testimoni - Member
+    Route::get('/testimonimember', [TestimoniMemberController::class, 'index'])->name('testimonimember.index');
+    Route::get('/testimonimember/{testimoni}', [TestimoniMemberController::class, 'show'])->name('testimonimember.show');
+    // Testimoni - Member
+
+     // Jenis Produk - Member
+     Route::get('/jenisprodukmember', [JenisProdukMemberController::class, 'index'])->name('jenisprodukmember.index');
+     Route::get('/jenisprodukmember/{jenisprodukmember}', [JenisProdukMemberController::class, 'show'])->name('jenisprodukmember.show');
+     // Jenis Produk - Member
+
+     // Kategori Tokoh - Member
+     Route::get('/kategoritokohmember', [KategoriTokohMemberController::class, 'index'])->name('kategoritokohmember.index');
+     Route::get('/kategoritokohmember/{kategoritokohmember}', [KategoriTokohMemberController::class, 'show'])->name('kategoritokohmember.show');
+     // Kategori Tokoh - Member
 
     // Profile
     Route::middleware('auth')->group(function () {
@@ -145,5 +158,9 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin', RoleMid
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
     // Profile
+
+    // Data Produk
+    Route::get('/panel/produk/data', [ProdukController::class, 'getData'])->name('produk.data');
+    // Data Produk
 });
 // Member
