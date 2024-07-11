@@ -35,6 +35,7 @@
                     @auth
                         @if (Auth::user()->role == 'admin')
                             <a href="{{ url('/panel/dashboardAdmin') }}" class="nav-item nav-link">Dashboard Admin</a>
+                            <a href="#" class="nav-item nav-link">{{ Auth::user()->name }}</a>
                         @elseif (Auth::user()->role == 'member')
                             <a href="{{ url('/dashboard') }}" class="nav-item nav-link">Dashboard Member</a>
                         @else

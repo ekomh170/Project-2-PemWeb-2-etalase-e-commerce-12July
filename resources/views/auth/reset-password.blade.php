@@ -20,8 +20,8 @@
                     <!-- Password Reset Token -->
                     <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-                    <!-- Email Address -->
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <!-- Alamat Email -->
+                    <div class="wrap-input100 validate-input" data-validate="Email yang valid diperlukan: ex@abc.xyz">
                         <input class="input100" id="email" type="email" name="email" placeholder="Email"
                             value="{{ old('email', $request->email) }}" required autofocus autocomplete="username">
                         <span class="focus-input100"></span>
@@ -33,9 +33,9 @@
                         @enderror
                     </div>
 
-                    <!-- Password -->
+                    <!-- Kata Sandi -->
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" id="password" type="password" name="password" placeholder="Password"
+                        <input class="input100" id="password" type="password" name="password" placeholder="Kata Sandi"
                             required autocomplete="new-password">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
@@ -46,10 +46,10 @@
                         @enderror
                     </div>
 
-                    <!-- Confirm Password -->
+                    <!-- Konfirmasi Kata Sandi -->
                     <div class="wrap-input100 validate-input" data-validate="Password confirmation is required">
                         <input class="input100" id="password_confirmation" type="password" name="password_confirmation"
-                            placeholder="Confirm Password" required autocomplete="new-password">
+                            placeholder="Konfirmasi Kata Sandi" required autocomplete="new-password">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
@@ -60,8 +60,9 @@
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            {{ __('Reset Password') }}
+                        <button class="login100-form-btn" type="submit">
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                            {{ __('Reset Kata Sandi') }}
                         </button>
                     </div>
                 </form>

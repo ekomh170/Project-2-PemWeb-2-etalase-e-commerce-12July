@@ -16,7 +16,7 @@
                             <div class="col-lg-7">
                                 <h1 class="display-2 mb-5 animated slideInDown" style="color: orange;">Produk Organik Berkualitas</h1>
                                 <a href="{{ url('/product') }}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Jelajahi Produk Kami</a>
-                                <a href="{{ url('/about') }}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Tentang Kami</a>
+                                <a href="{{ route('login') }}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Bergabung Sebagai Testimoni Kami</a>
                             </div>
                         </div>
                     </div>
