@@ -161,6 +161,9 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':member'])->grou
 
     // Data Produk
     Route::get('/panel/produk/data', [ProdukController::class, 'getData'])->name('produk.data');
+    Route::get('/panel/testimoni/data', [TestimoniController::class, 'getData'])->name('testimoni.data');
+    Route::get('/panel/jenisProduk/data', [JenisProdukController::class, 'getData'])->name('jenisProduk.data');
+    Route::get('/panel/kategoriTokoh/data', [KategoriTokohController::class, 'getData'])->name('kategoriTokoh.data');
     // Data Produk
 });
 // Member
