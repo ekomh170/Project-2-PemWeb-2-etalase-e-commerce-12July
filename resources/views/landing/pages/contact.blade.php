@@ -13,27 +13,6 @@
                 <p>Jika Anda memiliki pertanyaan atau butuh informasi lebih lanjut, jangan ragu untuk menghubungi kami melalui informasi kontak di bawah ini.</p>
             </div>
             <div class="row g-5 justify-content-center">
-                <div class="col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="bg-primary text-white d-flex flex-column justify-content-center h-100 p-5">
-                        <h5 class="text-white">Telepon Kami</h5>
-                        <p class="mb-5"><i class="fa fa-phone-alt me-3"></i>+021 123 45678</p>
-                        <h5 class="text-white">Email Kami</h5>
-                        <p class="mb-5"><i class="fa fa-envelope me-3"></i>info@testimart.com</p>
-                        <h5 class="text-white">Alamat Kantor</h5>
-                        <p class="mb-5"><i class="fa fa-map-marker-alt me-3"></i>Jl. Raya Bogor No. 123, Bogor, Indonesia</p>
-                        <h5 class="text-white">Ikuti Kami</h5>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://twitter.com/testimart"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://facebook.com/testimart"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://youtube.com/testimart"><i
-                                    class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-outline-light rounded-circle me-0" href="https://linkedin.com/company/testimart"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-lg-7 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                     <p class="mb-4">Formulir kontak ini saat ini tidak aktif. Dapatkan formulir kontak yang berfungsi dengan Ajax & PHP dalam beberapa menit. Cukup salin dan tempel file, tambahkan sedikit kode dan selesai. <a href="https://htmlcodex.com/contact-form">Unduh Sekarang</a>.</p>
                     <form>
@@ -67,6 +46,27 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-primary text-white d-flex flex-column justify-content-center h-100 p-5">
+                        <h5 class="text-white">Telepon Kami</h5>
+                        <p class="mb-5"><i class="fa fa-phone-alt me-3"></i>+021 123 45678</p>
+                        <h5 class="text-white">Email Kami</h5>
+                        <p class="mb-5"><i class="fa fa-envelope me-3"></i>info@testimart.com</p>
+                        <h5 class="text-white">Alamat Kantor</h5>
+                        <p class="mb-5"><i class="fa fa-map-marker-alt me-3"></i>Jl. Raya Bogor No. 123, Bogor, Indonesia</p>
+                        <h5 class="text-white">Ikuti Kami</h5>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://twitter.com/testimart"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://facebook.com/testimart"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://youtube.com/testimart"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-0" href="https://linkedin.com/company/testimart"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
