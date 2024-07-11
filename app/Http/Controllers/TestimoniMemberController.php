@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Testimoni;
+use App\Models\Produk;
+use App\Models\KategoriTokoh;
 
 class TestimoniMemberController extends Controller
 {
@@ -19,7 +22,9 @@ class TestimoniMemberController extends Controller
      */
     public function create()
     {
-        //
+        $produk = Produk::all();
+        $kategoriTokoh = KategoriTokoh::all();
+        return view('testimoni.create', compact('produk', 'kategoriTokoh'));
     }
 
     /**
@@ -27,38 +32,22 @@ class TestimoniMemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'tanggal' => 'required|date',
+            'nama_tokoh' => 'required|string|max:45',
+            'komentar' => 'required|string|max:200',
+            'rating' => 'required|integer',
+            'produk_id' => 'required|exists:produk,id',
+            'kategori_tokoh_id' => 'required|exists:kategori_tokoh,id',
+        ]);
+
+        Testimoni::create($validated);
+
+        return redirect()->route('testimonimember.index')->with('success', 'Testimoni berhasil ditambahkan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(Testimoni $testimonimember)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('testimoni.show', compact('testimonimember'));
     }
 }

@@ -1,5 +1,5 @@
 <section class="space-y-6">
-    <header>
+    <header style="background-color: white">
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('Delete Account') }}
         </h2>

@@ -20,6 +20,7 @@
                                     <th scope="col" class="border-bottom-0">Stok</th>
                                     <th scope="col" class="border-bottom-0">Gambar Produk</th>
                                     <th scope="col" class="border-bottom-0">Jenis Produk</th>
+                                    <th scope="col" class="border-bottom-0">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,6 +35,7 @@
                                     <th class="border-bottom-0">Stok</th>
                                     <th class="border-bottom-0">Gambar Produk</th>
                                     <th class="border-bottom-0">Jenis Produk</th>
+                                    <th class="border-bottom-0">Action</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -72,7 +74,10 @@
                 { data: 'gambar_produk', name: 'gambar_produk', render: function(data, type, full, meta) {
                     return `<img src="{{ asset('storage/produk') }}/${data}" alt="${full.nama}" class="img-thumbnail" style="width: 50px; height: 50px;">`;
                 }},
-                { data: 'jenis_produk.nama', name: 'jenis_produk.nama' }
+                { data: 'jenis_produk.nama', name: 'jenis_produk.nama' },
+                { data: 'action', name: 'action', orderable: false, searchable: false, render: function(data, type, full, meta) {
+                    return `<button class="btn btn-info btn-sm" onclick="viewDetail(${full.id})">Detail</button>`;
+                }}
             ],
             pageLength: 5,
             language: {
@@ -100,4 +105,8 @@
             }
         });
     });
+
+    function viewDetail(id) {
+        window.location.href = '{{ url('produkmember') }}/' + id;
+    }
 </script>

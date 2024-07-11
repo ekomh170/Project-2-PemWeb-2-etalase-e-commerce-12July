@@ -133,12 +133,14 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':member'])->grou
 
     // Produk - Member
     Route::get('/produkmember', [ProdukMemberController::class, 'index'])->name('produkmember.index');
-    Route::get('/produkmember/{produk}', [ProdukMemberController::class, 'show'])->name('produkmember.show');
+    Route::get('/produkmember/{produkmember}', [ProdukMemberController::class, 'show'])->name('produkmember.show');
     // Produk - Member
 
     // Testimoni - Member
     Route::get('/testimonimember', [TestimoniMemberController::class, 'index'])->name('testimonimember.index');
-    Route::get('/testimonimember/{testimoni}', [TestimoniMemberController::class, 'show'])->name('testimonimember.show');
+    Route::get('/testimonimember/{testimonimember}', [TestimoniMemberController::class, 'show'])->name('testimonimember.show');
+    Route::get('/panel/testimonimember/create', [TestimoniMemberController::class, 'create'])->name('testimonimember.create');
+    Route::post('/panel/testimonimember/store', [TestimoniMemberController::class, 'store'])->name('testimonimember.store');
     // Testimoni - Member
 
      // Jenis Produk - Member

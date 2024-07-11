@@ -9,6 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
+                    <div class="mb-4 text-right">
+                        <a href="{{ route('testimonimember.create') }}" style="background-color: orange" class="btn btn">Tambah Data</a>
+                    </div>
                     <div class="table-responsive">
                         <table id="testimoni-datatables" class="table table-striped table-bordered">
                             <thead class="thead-light">
@@ -20,6 +23,7 @@
                                     <th scope="col" class="border-bottom-0">Rating</th>
                                     <th scope="col" class="border-bottom-0">Produk</th>
                                     <th scope="col" class="border-bottom-0">Kategori Tokoh</th>
+                                    <th scope="col" class="border-bottom-0">Action</th> <!-- Kolom Action baru -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,6 +38,7 @@
                                     <th class="border-bottom-0">Rating</th>
                                     <th class="border-bottom-0">Produk</th>
                                     <th class="border-bottom-0">Kategori Tokoh</th>
+                                    <th class="border-bottom-0">Action</th> <!-- Kolom Action baru -->
                                 </tr>
                             </tfoot>
                         </table>
@@ -70,7 +75,16 @@
                 { data: 'komentar', name: 'komentar' },
                 { data: 'rating', name: 'rating' },
                 { data: 'produk.nama', name: 'produk.nama' }, // Sesuaikan dengan relasi Anda
-                { data: 'kategori_tokoh.nama', name: 'kategori_tokoh.nama' } // Sesuaikan dengan relasi Anda
+                { data: 'kategori_tokoh.nama', name: 'kategori_tokoh.nama' }, // Sesuaikan dengan relasi Anda
+                {
+                    data: null,
+                    name: 'action',
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, row) {
+                        return `<a href="{{ url('/testimonimember/${data.id}') }}" class="btn btn-info btn-sm">Detail</a>`;
+                    }
+                }
             ],
             pageLength: 5,
             language: {
