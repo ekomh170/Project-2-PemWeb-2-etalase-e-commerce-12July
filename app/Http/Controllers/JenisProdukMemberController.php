@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\JenisProduk;
 
 class JenisProdukMemberController extends Controller
 {
@@ -12,54 +13,20 @@ class JenisProdukMemberController extends Controller
     public function index()
     {
         return view('jenisproduk.index');
-
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
+     *
+     * @param  \App\Models\JenisProduk  $jenisProduk
+     * @return \Illuminate\Http\Response
      */
-    public function show(string $id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function show(JenisProduk $jenisprodukmember)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $produkList = $jenisprodukmember->produk; // Mendapatkan daftar produk yang terkait dengan jenis produk ini
+        // dd($produkList, $jenisProduk);
+        return view('jenisproduk.show', compact('jenisprodukmember', 'produkList'));
     }
 }

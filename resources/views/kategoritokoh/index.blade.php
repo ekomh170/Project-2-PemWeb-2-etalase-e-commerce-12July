@@ -15,6 +15,7 @@
                                 <tr class="text-left">
                                     <th scope="col" class="border-bottom-0">No</th>
                                     <th scope="col" class="border-bottom-0">Nama</th>
+                                    <th scope="col" class="border-bottom-0">Aksi</th> <!-- Tambah kolom aksi -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,6 +25,7 @@
                                 <tr>
                                     <th class="border-bottom-0">No</th>
                                     <th class="border-bottom-0">Nama</th>
+                                    <th class="border-bottom-0">Aksi</th> <!-- Tambah kolom aksi -->
                                 </tr>
                             </tfoot>
                         </table>
@@ -55,7 +57,16 @@
             ajax: '{{ route('kategoriTokoh.data') }}', // Adjust to your route for fetching kategori_tokoh data
             columns: [
                 { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
-                { data: 'nama', name: 'nama' }
+                { data: 'nama', name: 'nama' },
+                { 
+                    data: 'aksi', 
+                    name: 'aksi',
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, full, meta) {
+                        return '<a href="/kategoritokohmember/' + full.id + '" style="background-color: orange" class="btn btn">Detail</a>';
+                    }
+                }
             ],
             pageLength: 5,
             language: {

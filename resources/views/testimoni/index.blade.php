@@ -82,7 +82,7 @@
                     orderable: false,
                     searchable: false,
                     render: function(data, type, row) {
-                        return `<a href="{{ url('/testimonimember/${data.id}') }}" class="btn btn-info btn-sm">Detail</a>`;
+                        return `<a href="{{ url('/testimonimember/${data.id}') }}" style="background-color: orange" class="btn btn">Detail</a>`;
                     }
                 }
             ],

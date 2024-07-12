@@ -48,6 +48,11 @@
             background-color: #cc8400;
             border-color: #cc8400;
         }
+
+        /* garis bawah link none */
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 <body class="font-sans antialiased">

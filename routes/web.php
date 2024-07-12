@@ -42,6 +42,16 @@ Route::get('/contact', [LandingController::class, 'contact'])->name('landing.con
 // Landing Page ==============================================
 
 
+// Data Master
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/panel/Master/data', [ProdukController::class, 'getData'])->name('produk.data');
+    Route::get('/panel/testimoni/data', [TestimoniController::class, 'getData'])->name('testimoni.data');
+    Route::get('/panel/jenisProduk/data', [JenisProdukController::class, 'getData'])->name('jenisProduk.data');
+    Route::get('/panel/kategoriTokoh/data', [KategoriTokohController::class, 'getData'])->name('kategoriTokoh.data');
+});
+// Data Master
+
+
 // Set Auth ==============================================
 require __DIR__ . '/auth.php';
 // Set Auth ==============================================
@@ -62,7 +72,7 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group
 
     // Produk
     Route::get('/panel/produk', [ProdukController::class, 'index'])->name('produk.index');
-    Route::get('/panel/produk/data', [ProdukController::class, 'getData'])->name('produk.data');
+    // Route::get('/panel/produk/data', [ProdukController::class, 'getData'])->name('produk.data');
     Route::get('/panel/produk/create', [ProdukController::class, 'create'])->name('produk.create');
     Route::post('/panel/produk/store', [ProdukController::class, 'store'])->name('produk.store');
     Route::get('/panel/produk/{produk}', [ProdukController::class, 'show'])->name('produk.show');
@@ -73,7 +83,7 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group
 
     // Testimoni
     Route::get('/panel/testimoni', [TestimoniController::class, 'index'])->name('testimoni.index');
-    Route::get('/panel/testimoni/data', [TestimoniController::class, 'getData'])->name('testimoni.data');
+    // Route::get('/panel/testimoni/data', [TestimoniController::class, 'getData'])->name('testimoni.data');
     Route::get('/panel/testimoni/create', [TestimoniController::class, 'create'])->name('testimoni.create');
     Route::post('/panel/testimoni/store', [TestimoniController::class, 'store'])->name('testimoni.store');
     Route::get('/panel/testimoni/{testimoni}', [TestimoniController::class, 'show'])->name('testimoni.show');
@@ -86,7 +96,7 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group
     // Master Pengelompokan
     // Jenis Produk
     Route::get('/panel/jenisProduk', [JenisProdukController::class, 'index'])->name('jenisProduk.index');
-    Route::get('/panel/jenisProduk/data', [JenisProdukController::class, 'getData'])->name('jenisProduk.data');
+    // Route::get('/panel/jenisProduk/data', [JenisProdukController::class, 'getData'])->name('jenisProduk.data');
     Route::get('/panel/jenisProduk/create', [JenisProdukController::class, 'create'])->name('jenisProduk.create');
     Route::post('/panel/jenisProduk/store', [JenisProdukController::class, 'store'])->name('jenisProduk.store');
     Route::get('/panel/jenisProduk/{jenisProduk}', [JenisProdukController::class, 'show'])->name('jenisProduk.show');
@@ -97,7 +107,7 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group
 
     // Kategori Tokoh
     Route::get('/panel/kategoriTokoh', [KategoriTokohController::class, 'index'])->name('kategoriTokoh.index');
-    Route::get('/panel/kategoriTokoh/data', [KategoriTokohController::class, 'getData'])->name('kategoriTokoh.data');
+    // Route::get('/panel/kategoriTokoh/data', [KategoriTokohController::class, 'getData'])->name('kategoriTokoh.data');
     Route::get('/panel/kategoriTokoh/create', [KategoriTokohController::class, 'create'])->name('kategoriTokoh.create');
     Route::post('/panel/kategoriTokoh/store', [KategoriTokohController::class, 'store'])->name('kategoriTokoh.store');
     Route::get('/panel/kategoriTokoh/{kategoriTokoh}', [KategoriTokohController::class, 'show'])->name('kategoriTokoh.show');
@@ -143,15 +153,15 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':member'])->grou
     Route::post('/panel/testimonimember/store', [TestimoniMemberController::class, 'store'])->name('testimonimember.store');
     // Testimoni - Member
 
-     // Jenis Produk - Member
-     Route::get('/jenisprodukmember', [JenisProdukMemberController::class, 'index'])->name('jenisprodukmember.index');
-     Route::get('/jenisprodukmember/{jenisprodukmember}', [JenisProdukMemberController::class, 'show'])->name('jenisprodukmember.show');
-     // Jenis Produk - Member
+    // Jenis Produk - Member
+    Route::get('/jenisprodukmember', [JenisProdukMemberController::class, 'index'])->name('jenisprodukmember.index');
+    Route::get('/jenisprodukmember/{jenisprodukmember}', [JenisProdukMemberController::class, 'show'])->name('jenisprodukmember.show');
+    // Jenis Produk - Member
 
-     // Kategori Tokoh - Member
-     Route::get('/kategoritokohmember', [KategoriTokohMemberController::class, 'index'])->name('kategoritokohmember.index');
-     Route::get('/kategoritokohmember/{kategoritokohmember}', [KategoriTokohMemberController::class, 'show'])->name('kategoritokohmember.show');
-     // Kategori Tokoh - Member
+    // Kategori Tokoh - Member
+    Route::get('/kategoritokohmember', [KategoriTokohMemberController::class, 'index'])->name('kategoritokohmember.index');
+    Route::get('/kategoritokohmember/{kategoritokohmember}', [KategoriTokohMemberController::class, 'show'])->name('kategoritokohmember.show');
+    // Kategori Tokoh - Member
 
     // Profile
     Route::middleware('auth')->group(function () {
@@ -160,12 +170,5 @@ Route::middleware(['auth', 'verified', RoleMiddleware::class . ':member'])->grou
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
     // Profile
-
-    // Data Produk
-    Route::get('/panel/produk/data', [ProdukController::class, 'getData'])->name('produk.data');
-    Route::get('/panel/testimoni/data', [TestimoniController::class, 'getData'])->name('testimoni.data');
-    Route::get('/panel/jenisProduk/data', [JenisProdukController::class, 'getData'])->name('jenisProduk.data');
-    Route::get('/panel/kategoriTokoh/data', [KategoriTokohController::class, 'getData'])->name('kategoriTokoh.data');
-    // Data Produk
 });
 // Member

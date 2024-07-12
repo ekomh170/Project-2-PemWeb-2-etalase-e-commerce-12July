@@ -15,7 +15,7 @@
                                 <div class="card-header">Total Produk</div>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="{{ route('produkmember.index') }}" class="text-white">{{ $total_product }}</a>
+                                        <a href="{{ route('produkmember.index') }}" class="text-white" style="text-decoration: none;">{{ $total_product }}</a>
                                     </h5>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                                 <div class="card-header">Total Testimoni</div>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="{{ route('testimonimember.index') }}" class="text-white">{{ $total_testimoni }}</a>
+                                        <a href="{{ route('testimonimember.index') }}" class="text-white" style="text-decoration: none;">{{ $total_testimoni }}</a>
                                     </h5>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                 <div class="card-header">Total Jenis Produk</div>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="{{ route('jenisprodukmember.index') }}" class="text-white">{{ $total_jenis_produk }}</a>
+                                        <a href="{{ route('jenisprodukmember.index') }}" class="text-white" style="text-decoration: none;">{{ $total_jenis_produk }}</a>
                                     </h5>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                 <div class="card-header">Total Kategori Tokoh</div>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="{{ route('kategoritokohmember.index') }}" class="text-white">{{ $total_kategori_tokoh }}</a>
+                                        <a href="{{ route('kategoritokohmember.index') }}" class="text-white" style="text-decoration: none;">{{ $total_kategori_tokoh }}</a>
                                     </h5>
                                 </div>
                             </div>

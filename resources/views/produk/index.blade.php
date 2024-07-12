@@ -76,7 +76,7 @@
                 }},
                 { data: 'jenis_produk.nama', name: 'jenis_produk.nama' },
                 { data: 'action', name: 'action', orderable: false, searchable: false, render: function(data, type, full, meta) {
-                    return `<button class="btn btn-info btn-sm" onclick="viewDetail(${full.id})">Detail</button>`;
+                    return `<button style="background-color: orange" class="btn btn" onclick="viewDetail(${full.id})">Detail</button>`;
                 }}
             ],
             pageLength: 5,

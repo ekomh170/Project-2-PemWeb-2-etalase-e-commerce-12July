@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\KategoriTokoh;
 
 class KategoriTokohMemberController extends Controller
 {
@@ -15,50 +16,14 @@ class KategoriTokohMemberController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
+     *
+     * @param  \App\Models\KategoriTokoh  $kategoriTokoh
+     * @return \Illuminate\Http\Response
      */
-    public function show(string $id)
+    public function show(KategoriTokoh $kategoritokohmember)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $testimoniList = $kategoritokohmember->testimoni; // Mendapatkan daftar testimoni yang terkait dengan kategori tokoh ini
+        return view('kategoritokoh.show', compact('kategoritokohmember', 'testimoniList'));
     }
 }
