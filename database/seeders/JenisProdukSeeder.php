@@ -16,6 +16,13 @@ class JenisProdukSeeder extends Seeder
             ['nama' => 'Elektronik'],
             ['nama' => 'Pakaian'],
             ['nama' => 'Makanan'],
+            ['nama' => 'Peralatan Rumah Tangga'],
+            ['nama' => 'Kosmetik'],
+            ['nama' => 'Olahraga'],
+            ['nama' => 'Buku'],
+            ['nama' => 'Mainan'],
+            ['nama' => 'Otomotif'],
+            ['nama' => 'Peralatan Kantor'],
         ]);
     }
 }

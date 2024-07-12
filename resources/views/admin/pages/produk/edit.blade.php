@@ -56,7 +56,7 @@
                                     <label for="gambar_produk"><strong>Gambar Produk</strong></label>
                                     <input type="file" name="gambar_produk" id="gambar_produk" class="form-control">
                                     @if($produk->gambar_produk)
-                                        <img src="{{ asset('storage/produk/' . $produk->gambar_produk) }}" alt="Gambar Produk" width="100">
+                                        <img src="{{ asset('storage/' . $produk->gambar_produk) }}" alt="Gambar Produk" width="100">
                                     @endif
                                 </div>
                                 <div class="form-group">

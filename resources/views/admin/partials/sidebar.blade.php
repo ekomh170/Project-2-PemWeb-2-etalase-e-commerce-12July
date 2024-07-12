@@ -113,16 +113,6 @@
                 </li>
                 <!-- End Profile -->
 
-
-                <!-- Reset Password -->
-                <li class="nav-item {{ Route::is('password.reset') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fas fa-key"></i>
-                        <p>Reset Password</p>
-                    </a>
-                </li>
-                <!-- End Reset Password -->
-
                 <!-- Master Data -->
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">

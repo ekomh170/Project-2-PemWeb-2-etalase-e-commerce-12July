@@ -85,7 +85,7 @@
                     { data: 'harga', name: 'harga' },
                     { data: 'stok', name: 'stok' },
                     { data: 'gambar_produk', name: 'gambar_produk', render: function(data, type, full, meta) {
-                        return `<img src="{{ asset('storage') }}/produk/${data}" alt="${full.nama}" style="width: 50px;">`;
+                        return `<img src="{{ asset('storage') }}/${data}" alt="${full.nama}" style="width: 50px;">`;
                     }},
                     { data: 'jenis_produk.nama', name: 'jenis_produk.nama' },
                     { data: 'action', name: 'action', orderable: false, searchable: false }

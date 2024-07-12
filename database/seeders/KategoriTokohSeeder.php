@@ -15,7 +15,14 @@ class KategoriTokohSeeder extends Seeder
         DB::table('kategori_tokoh')->insert([
             ['nama' => 'Artis'],
             ['nama' => 'Atlet'],
-            ['nama' => 'Politisi'],
+            ['nama' => 'Member Testi Mart'],
+            ['nama' => 'Ilmuwan'],
+            ['nama' => 'Penulis'],
+            ['nama' => 'Musisi'],
+            ['nama' => 'Pengusaha'],
+            ['nama' => 'Aktivis'],
+            ['nama' => 'Guru'],
+            ['nama' => 'Selebriti'],
         ]);
     }
 }

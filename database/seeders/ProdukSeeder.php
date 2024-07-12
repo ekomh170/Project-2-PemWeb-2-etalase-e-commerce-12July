@@ -16,7 +16,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'ELE001',
                 'nama' => 'Smartphone XYZ',
-                'gambar_produk' => 'smartphone-xyz.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 2500000,
                 'stok' => 100,
                 'rating' => 4,
@@ -27,7 +27,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'PAK001',
                 'nama' => 'Kaos Polos',
-                'gambar_produk' => 'kaos-polos.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 50000,
                 'stok' => 200,
                 'rating' => 5,
@@ -38,7 +38,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'MAK001',
                 'nama' => 'Keripik Singkong',
-                'gambar_produk' => 'keripik-singkong.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 15000,
                 'stok' => 300,
                 'rating' => 3,
@@ -46,11 +46,10 @@ class ProdukSeeder extends Seeder
                 'deskripsi' => 'Keripik singkong renyah dengan berbagai rasa',
                 'jenis_produk_id' => 3
             ],
-
             [
                 'kode' => 'ELE002',
                 'nama' => 'Smartphone ABC',
-                'gambar_produk' => 'smartphone-abc.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 2000000,
                 'stok' => 100,
                 'rating' => 4,
@@ -61,7 +60,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'PAK002',
                 'nama' => 'Kaos Motif',
-                'gambar_produk' => 'kaos-motif.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 75000,
                 'stok' => 200,
                 'rating' => 5,
@@ -72,7 +71,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'MAK002',
                 'nama' => 'Keripik Kentang',
-                'gambar_produk' => 'keripik-kentang.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 20000,
                 'stok' => 300,
                 'rating' => 3,
@@ -83,7 +82,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'ELE003',
                 'nama' => 'Smartphone DEF',
-                'gambar_produk' => 'smartphone-def.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 3000000,
                 'stok' => 100,
                 'rating' => 4,
@@ -94,7 +93,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'PAK003',
                 'nama' => 'Kaos Warna-warni',
-                'gambar_produk' => 'kaos-warna-warni.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 60000,
                 'stok' => 200,
                 'rating' => 4,
@@ -102,12 +101,10 @@ class ProdukSeeder extends Seeder
                 'deskripsi' => 'Kaos warna-warni dengan bahan katun yang nyaman',
                 'jenis_produk_id' => 2
             ],
-
-            // buatkan hingga total 20 data dan jenis produk yang tidak boleh lebih dari 1 - 3
             [
                 'kode' => 'MAK003',
                 'nama' => 'Keripik Tempe',
-                'gambar_produk' => 'keripik-tempe.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 25000,
                 'stok' => 300,
                 'rating' => 3,
@@ -118,7 +115,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'ELE004',
                 'nama' => 'Smartphone GHI',
-                'gambar_produk' => 'smartphone-ghi.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 3500000,
                 'stok' => 100,
                 'rating' => 4,
@@ -129,7 +126,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'PAK004',
                 'nama' => 'Kaos Batik',
-                'gambar_produk' => 'kaos-batik.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 80000,
                 'stok' => 200,
                 'rating' => 5,
@@ -140,7 +137,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'MAK004',
                 'nama' => 'Keripik Ubi',
-                'gambar_produk' => 'keripik-ubi.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 30000,
                 'stok' => 300,
                 'rating' => 3,
@@ -151,7 +148,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'ELE005',
                 'nama' => 'Smartphone JKL',
-                'gambar_produk' => 'smartphone-jkl.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 4000000,
                 'stok' => 100,
                 'rating' => 4,
@@ -159,11 +156,10 @@ class ProdukSeeder extends Seeder
                 'deskripsi' => 'Smartphone dengan fitur canggih dan baterai tahan lama',
                 'jenis_produk_id' => 1
             ],
-
             [
                 'kode' => 'PAK005',
                 'nama' => 'Kaos Lengan Panjang',
-                'gambar_produk' => 'kaos-lengan-panjang.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 90000,
                 'stok' => 200,
                 'rating' => 5,
@@ -174,7 +170,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'MAK005',
                 'nama' => 'Keripik Jagung',
-                'gambar_produk' => 'keripik-jagung.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 35000,
                 'stok' => 300,
                 'rating' => 3,
@@ -185,7 +181,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'ELE006',
                 'nama' => 'Smartphone MNO',
-                'gambar_produk' => 'smartphone-mno.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 4500000,
                 'stok' => 100,
                 'rating' => 4,
@@ -196,7 +192,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'PAK006',
                 'nama' => 'Kaos V-Neck',
-                'gambar_produk' => 'kaos-v-neck.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 95000,
                 'stok' => 200,
                 'rating' => 5,
@@ -207,7 +203,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'MAK006',
                 'nama' => 'Keripik Bayam',
-                'gambar_produk' => 'keripik-bayam.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 40000,
                 'stok' => 300,
                 'rating' => 3,
@@ -215,11 +211,10 @@ class ProdukSeeder extends Seeder
                 'deskripsi' => 'Keripik bayam renyah dengan berbagai rasa',
                 'jenis_produk_id' => 3
             ],
-
             [
                 'kode' => 'ELE007',
                 'nama' => 'Smartphone PQR',
-                'gambar_produk' => 'smartphone-pqr.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 5000000,
                 'stok' => 100,
                 'rating' => 4,
@@ -230,7 +225,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'PAK007',
                 'nama' => 'Kaos Raglan',
-                'gambar_produk' => 'kaos-raglan.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 100000,
                 'stok' => 200,
                 'rating' => 5,
@@ -241,7 +236,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'MAK007',
                 'nama' => 'Keripik Wortel',
-                'gambar_produk' => 'keripik-wortel.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 45000,
                 'stok' => 300,
                 'rating' => 3,
@@ -252,7 +247,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'ELE008',
                 'nama' => 'Smartphone STU',
-                'gambar_produk' => 'smartphone-stu.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 5500000,
                 'stok' => 100,
                 'rating' => 4,
@@ -263,7 +258,7 @@ class ProdukSeeder extends Seeder
             [
                 'kode' => 'PAK008',
                 'nama' => 'Kaos Crop',
-                'gambar_produk' => 'kaos-crop.jpg',
+                'gambar_produk' => 'produk/produk_default.png',
                 'harga' => 105000,
                 'stok' => 200,
                 'rating' => 5,
