@@ -52,7 +52,7 @@
                                 </tr>
                                 <tr>
                                     <th>Gambar Produk</th>
-                                    <td><img src="{{ $produk->gambar_produk }}" alt="{{ $produk->nama }}"
+                                    <td><img src="{{ asset('storage') }}/{{ $produk->gambar_produk }}" alt="{{ $produk->nama }}"
                                             style="width: 100px;"></td>
                                 </tr>
                                 <tr>
