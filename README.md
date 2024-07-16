@@ -1,66 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Testi Mart - Platform E-commerce
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Hai Everyone 👋👋👋
 
-## About Laravel
+Halo, perkenalkan nama saya Eko Muchamad Haryono. Saya adalah mahasiswa Program Studi Teknik Informatika di Sekolah Tinggi Teknologi Terpadu Nurul Fikri, angkatan 2023. Saat ini, saya menjabat sebagai Ketua Team 1 untuk Project Dengan Tema Pembuatan Etalase E-commerce dengan Laravel 11, Matkul Pemrograman Web 2 di Kelas TI 02.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Saya ingin berbagi mengenai proyek akhir kami di semester 2. Berikut adalah anggota kelompok yang telah berkontribusi dalam proyek ini:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Eko Muchamad Haryono (0110223079) - (Team Lead)
+2. Zaky Muhammad Hafizh (0110223057)
+3. Yasser Fajar Purwawiwaha (0110223066)
+4. Muhamad Sayyid Fadhil (0110223061)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📑 Penjelasan Aplikasi
 
-## Learning Laravel
+Aplikasi Berbasis Web, Testi Mart adalah platform yang menggabungkan produk dengan testimoni dari tokoh atau selebriti. Admin dapat mengelola produk, testimoni, jenis dan kategori produk, serta akun pengguna. Member dapat mengedit profil, melihat informasi produk, dan menambahkan testimoni. Platform ini memastikan keamanan dengan sistem yang membatasi akses member pada admin.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 📑 Tentang
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Tema**: Etalase E-commerce
+- **Judul Aplikasi**: TESTI MART
+- **Platform**: Berbasis Web
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🔗 Links Demo
 
-## Laravel Sponsors
+- **Hosting**: [Link Hosting](https://kreasi.nurulfikri.ac.id/ekom23079ti/project-2-pemweb-2-etalase-e-commerce-12July/public/index.php) (public/index.php -> biarkan)
+- **Video Demo**: [Link Video Demo](https://drive.google.com/file/d/1_iEqeTdGY1Rj-nMXMNXxy7sk__qsI9Ra/view?usp=sharing)
+- **Video Demo Lengkap**: Sedang Di Progress
+- **PPT**: [Link PPT](https://www.canva.com/design/DAGKoPv5SFI/t38DER4MPJ6hZngdgoRcDg/view?utm_content=DAGKoPv5SFI&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 👨‍💻 Login Demo
 
-### Premium Partners
+1. **Aktor**: Admin
+   - Email: eko@example.com
+   - Password: password
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2. **Aktor**: Member
+   - Email: zaky@example.com
+   - Password: password
 
-## Contributing
+### 📑 Fitur Utama
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Halaman Utama (Landing Page)**
+- **Halaman Auth (Login & Registrasi)**
+- **Menggunakan Manajemen Akses Role**: Admin & Member
+- **Halaman Admin Panel -> CRUD & Detail**
+  - Dashboard Khusus Admin
+  - Profile (Lihat & Edit)
+  - Produk
+  - Testimoni
+  - Jenis Produk
+  - Kategori Produk
+  - Account Users
+- **Halaman Member Panel**
+  - Edit Profile
+  - Dashboard Khusus Member
+  - Produk (Hanya Membaca Informasi)
+  - Testimoni (Hanya Membaca Informasi & Tambah Data)
+  - Jenis Produk (Hanya Membaca Informasi)
+  - Kategori Produk (Hanya Membaca Informasi)
+- **Logout**
 
-## Code of Conduct
+### 📑 Penjelasan Fitur Inisiatif
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Profile & Produk Dapat Melakukan Upload Gambar.
+- Data Produk & Testimoni Yang Ada Di Landing Page Sudah Terintegrasi Dengan Database.
+- Member Tidak Dapat Melakukan Akses Pada Admin.
 
-## Security Vulnerabilities
+### 📑 Teknologi Yang Digunakan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- HTML, CSS, JS, PHP, MYSQL
+- Framework: Bootstrap, Tailwind CSS Bawaan Breeze, Laravel
+- Menggunakan Plugin Tambahan Lainnya (Sweet Alert, dll)
+- Kolaborasi & Penyimpanan: Git & Github
+- Templating: Kaiadmin & foody2
+- Tools: XAMPP, MYSQL Workbench
+- Text Editor: VSCODE
 
-## License
+Dengan ini, saya ucapkan terima kasih atas dedikasi yang diberikan Pak Sirojul Munir selaku Dosen dari Mata Kuliah Pemrograman Web 2 dan Kak Abdurrahman Ziyad selaku Asisten Dosen beliau.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Terima kasih atas perhatiannya.
